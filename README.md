@@ -1,2 +1,3 @@
 # musenmy.github.io
-Musenmy official homepage3rd
+無洗米の公式ホームページに使用されるリポジトリです。
+
