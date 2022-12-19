@@ -9,3 +9,12 @@ body {
   font-size:90%;
   font-family: sans-serif;
 }
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
