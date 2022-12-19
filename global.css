@@ -4,10 +4,12 @@
 }
 body {
   padding: 3%;
-  color:#eeeeee;
-  background-color:#000000;
-  font-size:90%;
+  color: #eeeeee;
+  background-color: black;
+  font-size: 90%;
   font-family: sans-serif;
+  transition-duration: 0.8s;
+  transition-property: color, background-color;
 }
 .center {
   text-align: center;
@@ -17,4 +19,63 @@ body {
 }
 .right {
   text-align: right;
+}
+
+/* 初期ダーク */
+.darkonly {
+  display: block;
+}
+.lightonly {
+  display: none;
+}
+
+/* ライトのとき */
+.js-mode-light {
+  color: black;
+  background-color: whitesmoke;
+}
+.js-mode-light .light {
+  display: block;
+}
+.js-mode-light .dark {
+  display: none;
+}
+
+/* モード切り替えボタン */
+input[type="checkbox"] {
+  display: none;
+}
+.switch {
+  position: fixed;
+  top: .5em;
+  right: .5em;
+  font-size: 60px;
+}
+.switch-label {
+  cursor: pointer;
+}
+.switch-mode {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  display: block;
+  width: 200px;
+  height: 200px;
+  transform: rotate(0);
+  transition: transform 1s;
+}
+/* 月と太陽を対角線上に設置しておく。
+   設定したspanを回したら太陽がひっくり返ってしまったので、transform scaleで上下反転した */
+.switch-mode::before {
+  content: "Dark";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.switch-mode::after {
+  content: "Light";
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(1,-1);
 }
