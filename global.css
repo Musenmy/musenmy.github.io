@@ -34,10 +34,10 @@ body {
   color: black;
   background-color: whitesmoke;
 }
-.js-mode-light .light {
+.js-mode-light .lightonly {
   display: block;
 }
-.js-mode-light .dark {
+.js-mode-light .darkonly {
   display: none;
 }
 
@@ -62,7 +62,7 @@ input[type="checkbox"] {
   width: 200px;
   height: 200px;
   transform: rotate(0);
-  transition: transform 1s;
+  transition: transform 0.8s;
 }
 /* 月と太陽を対角線上に設置しておく。
    設定したspanを回したら太陽がひっくり返ってしまったので、transform scaleで上下反転した */
