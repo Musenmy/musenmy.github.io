@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>TOP - Relicer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="../fav.ico" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <!-- ここにheader.htmlが読み込まれる -->
+    </div>
+
+    <script>
+      $(function () {
+        $("#header").load("./header.html");
+      });
+    </script>
+
+    <br /><br />
+    <h1>Relicer Bot</h1>
+    <p class="right">from Musenmy</p>
+    <br /><br />
+    <h2>Relicer<span class="jap">とは</span></h2>
+    <br />
+    <p class="jap">
+      Relicerは、原神と崩壊スターレイルに関するさまざまなツールを提供するBotです。<br />
+      現在は、ユーザーIDからの聖遺物評価やビルドカード生成、螺旋の進捗確認、聖遺物の必要コスト計算、育成素材の計算機能が実装されています。<br />
+      元々は原神のみのツールとして本Botはスタートしましたが、崩壊スターレイルでも、ユーザーIDからの聖遺物評価やビルドカード生成に対応するようになりました。<br />
+    </p>
+    <br />
+    <h2>Relicer<span class="jap">の使い方</span></h2>
+    <br />
+    <p class="jap">
+      1. Discord上でサーバーに本Botを導入するか、本BotにDMしてください<br />
+      2.
+      チャットで/記号を入力するとコマンド一覧が表示されます。希望のものを選択し送信してください。<br />
+      3. 入力画面が表示されるので、必要情報を入力してください。<br /><br />
+    </p>
+
+    <div class="agreeTerms">
+      <form>
+        <p>
+          <input type="checkbox" id="consent-chk" name="consent-chk" />
+          <label for="consent-chk"
+            ><a href="./terms.html">利用規約</a>に同意する</label
+          >
+        </p>
+        <p>
+          <input
+            type="button"
+            onclick="location.href='https://discord.com/api/oauth2/authorize?client_id=1073165731182673990&permissions=414464731200&scope=guilds.join%20bot%20applications.commands&response_type=code'"
+            value="Botの招待はこちら"
+            disabled
+          />
+        </p>
+      </form>
+      <script>
+        // 同意するのチェックボックス
+        const consent_chk = document.querySelector(`#consent-chk`);
+        // 送信ボタン
+        const submit_btn = document.querySelector(`input[type=button]`);
+
+        // チェックボックスの入力イベント
+        consent_chk.addEventListener("change", () => {
+          // チェックボックスがあれば無効化をオフ、なければオン
+          if (consent_chk.checked === true) {
+            submit_btn.disabled = false;
+          } else {
+            submit_btn.disabled = true;
+          }
+        });
+        //ページバックした時チェックを消す
+        window.addEventListener("pageshow", function (event) {
+          if (event.persisted) {
+            consent_chk.checked = false;
+            submit_btn.disabled = true;
+          }
+        });
+      </script>
+    </div>
+    <br /><br />
+    <p>
+      公式サーバーは<a href="https://discord.gg/juJAFbvnta">こちら</a><br />
+      各コマンドの詳しい使い方は<a
+        href="https://msqv.glitch.me/Relicer/use.html"
+        >こちら</a
+      >
+    </p>
+    <br />
+    <h2>FAQ</h2>
+    <br />
+    <p class="jap">
+      ・Botの導入はどうやるのですか？<br />
+      あなたがサーバー管理者の場合、Bot用の招待リンクを開くことで可能です。上にある「Botの招待はこちら」をご利用ください。<br />
+      ・コマンドが出てきません<br />
+      サーバーでの権限設定を確認してください。Botの権限の他、使う人も「メッセージを送信」「スラッシュコマンドを使用」が必要です。<br />
+      ・どこで使えますか<br />
+      Botが読めるチャンネルならどこでも使えます（つまりプライベートチャンネルは無理）。どこでも無条件で動かしたければ管理者権限を与えてください。<br />
+      サーバーじゃなくても使えます。プロフィールからBotにもDMできます。<br />
+      ・プロフィールのキャラクターなどを変更したのにBotに反映されません<br />
+      使用しているAPIの仕様上、プロフィールの変更がBotに完全に反映されるまで、5分程度かかります。お手数ですが反映されるまでお待ち下さい。<br />
+      ・素材計算で謎の文字列が出てくる<br />
+      素材画像はカスタム絵文字を使用しているため、正しく表示するにはBotに「外部の絵文字を使用する」権限が必要です。<br />
+      特定条件を満たす一部のサーバーではDiscordの仕様上表示できません。詳しくはDiscordサポートにお問い合わせください。<br />
+      ・バグを見つけました<br />
+      公式サーバーのバグ報告から連絡願います。可能ならすぐに修正します。<br />
+      修正に時間を要する場合は不具合情報として告知します。<br />
+    </p>
+    <br /><br />
+    <div id="footer">
+      <!-- ここにfooter.htmlが読み込まれる -->
+    </div>
+
+    <script>
+      $(function () {
+        $("#footer").load("../footer.html");
+      });
+    </script>
+  </body>
+</html>
