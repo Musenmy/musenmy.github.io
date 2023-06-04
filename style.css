@@ -42,12 +42,12 @@
 @font-face {
   font-family: "OsansL";
   unicode-range: U+0000-0FFF;
-  src: url(https://cdn.glitch.global/8c3858dc-678f-43a4-896f-e4971619e841/OsansL.ttf);
+  src: url(https://cdn.glitch.global/8c3858dc-678f-43a4-896f-e4971619e841/OPlus-Light.ttf);
 }
 @font-face {
   font-family: "OsansR";
   unicode-range: U+0000-0FFF;
-  src: url(https://cdn.glitch.global/8c3858dc-678f-43a4-896f-e4971619e841/OsansR.ttf);
+  src: url(https://cdn.glitch.global/8c3858dc-678f-43a4-896f-e4971619e841/OPlus-Medium.ttf);
 }
 
 * {
