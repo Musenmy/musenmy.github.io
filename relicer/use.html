@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>使い方 - Relicer</title>
+    <title>Relicerの使い方 - Musenmy</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -23,17 +23,28 @@
 
     <br /><br />
     <h1>Relicer 詳しい使い方</h1>
-    <br /><br />
-    <h2 class="jap">カード作成<br />/genshin-char</h2>
+<br><br>
+<h2>スタミナ計算<br>/hsr-charと/genshin-char</h2>
+<br>
+<p>対応するほうのコマンドを実行し、引数として現在の樹脂または開拓力を入力してください。<br>
+全回復が今日か明日か・それが何時何分で何時間後かが出力されます。</p>
+<br><br>
+    <h2>スターレイルカード作成<br>/hsr-char</h2>
+<br>
+    <p>コマンドを実行すると入力欄が出現します。<br>
+入力欄の上から順にユーザーID、キャラの番目、スコア計算方法を入力してください（キャラの番目については、サポートキャラが0、展示キャラが左から1/2/3となっています）<br>
+計算方法はいまのところ攻撃/防御/HP/速度に対応しています。計算式は原神と同じです。
+</p>
+<br><br>
+    <h2>原神カード作成<br />/genshin-char</h2>
     <br />
     <div class="doFlex">
       <div class="flex1">
-        <p class="jap">
+        <p>
           コマンドを実行すると入力欄が出現します。<br />
           入力欄の上から順にユーザーID、読み込むキャラ、スコア計算方法を入力してください。<br />
           計算方法は今のところ攻撃/HP/防御/チャージ/元素熟知に対応しています。<br />
           APIの仕様上、プロフィールで公開されているキャラのみ読み込めます。<br />
-          なお、Botが応答しない不具合を防ぐため、お使いのDiscordクライアント(アプリ)を最新版にアップデートの上、ご利用いただくようお願いいたします。<br />
         </p>
         <br /><br />
 
@@ -148,7 +159,8 @@
             ・熟知<br />
             会心率x2 + 会心ダメ + 熟知/5<br />
             <br />
-            中国で主流の式を採用しています。<br />
+            正確としてある程度広まっている式を採用しています<br />
+            (9や120は基礎値のおおよその平均)<br>
             今後は%のみカウントする式や、カスタム提案をいただいた式にも対応する予定です。
           </p>
         </div>
@@ -181,8 +193,8 @@
         <p class="center">生成画像のサンプル</p>
         <div class="center">
           <img
-            src="https://cdn.discordapp.com/attachments/1073180098519380008/1089472942108315719/file.jpg"
-            alt="Relicerが生成したビルドカードの画像"
+            src="https://media.discordapp.net/attachments/1114737159119831151/1115280956312530954/file.jpg"
+            alt="Relicerが生成した原神ビルドカードの画像"
             width="90%"
           />
         </div>
