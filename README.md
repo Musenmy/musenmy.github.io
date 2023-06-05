@@ -1,1 +1,4 @@
-# musenmy.github.io
+# Musenmyのホームページ
+
+自分の概要や趣味、やってるゲームについて書こうと思います
+運用してるDiscord BotのRelicerについても書きます
