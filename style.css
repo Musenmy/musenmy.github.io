@@ -69,18 +69,19 @@ body {
   font-family: OsansR, sans-serif;
 }
 input[type="button"] {
-  border: 1px solid black;
   width: 200px;
   font-size: 18px;
   transition: 0;
+  border: 1px solid black;
   background-color: #cccccc;
-  color: black;
+  color: #202124;
   cursor: pointer;
 
 }
 input[type="button"]:disabled {
-  border: 1px solid rgba(204,204,204,0.4);
+  border: 1px solid #202124;
   background-color: rgba(204,204,204,0.4);
+  color: rgba(32,33,36,0.4)
   cursor: not-allowed;
 }
 
