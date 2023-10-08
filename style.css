@@ -62,19 +62,23 @@ body {
   position: relative;
   padding: 3% 0 0;
   font-family: OsansR, sans-serif;
-  animation-name: stagger;
+  animation-name: load;
   animation-duration: 0.75s;
 }
 .jap {
   font-family: OsansR, sans-serif;
 }
 input[type="button"] {
+  border: 1px solid var(--pColor);
+  width: 200px;
+  font-size: 18px;
+  transition: 0;
   background-color: whitesmoke;
   color: black;
+
 }
 input[type="button"]:disabled {
-  background-color: #cccccc; /* 無効化時の背景色をグレーに設定 */
-  color: #000000;
+  background-color: #555555;
 }
 
 header {
@@ -198,19 +202,13 @@ input[type="checkbox"] {
   margin: 15px 5px;
 }
 
-input[type="button"] {
-  width: 200px;
-  font-size: 18px;
-  transition: 0;
-}
-
-@keyframes stagger {
+@keyframes load {
   0% {
     opacity: 0;
-    left: -100%;
+    right: -60%;
   }
   100% {
     opacity: 1;
-    left: 0px;
+    right: 0px;
   }
 }
