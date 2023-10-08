@@ -2,16 +2,16 @@
 @media (prefers-color-scheme: light) {
   :root {
     --bgColor: whitesmoke;
-    --pColor: black;
-    --linkColor: blue;
+    --pColor: #202124;
+    --linkColor: #065fd4;
   }
 }
 /*dark mode*/
 @media (prefers-color-scheme: dark) {
   :root {
-    --bgColor: black;
+    --bgColor: #202124;
     --pColor: whitesmoke;
-    --linkColor: red;
+    --linkColor: #065fd4;
   }
 }
 /*pc, large display*/
