@@ -54,13 +54,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: 0.5s;
+  transition: 0.75s;
+  background-color: var(--bgColor);
 }
 body {
   margin: 0;
   position: relative;
   padding: 3% 0 0;
-  background-color: var(--bgColor);
   font-family: OsansR, sans-serif;
   animation-name: stagger;
   animation-duration: 0.5s;
