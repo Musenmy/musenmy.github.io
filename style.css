@@ -69,7 +69,7 @@ body {
   font-family: OsansR, sans-serif;
 }
 input[type="button"] {
-  border: 1px solid var(--pColor);
+  border: 1px solid whitesmoke;
   width: 200px;
   font-size: 18px;
   transition: 0;
@@ -78,6 +78,7 @@ input[type="button"] {
 
 }
 input[type="button"]:disabled {
+  border: 1px solid #555555;
   background-color: #555555;
 }
 
