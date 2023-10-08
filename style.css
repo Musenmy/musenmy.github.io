@@ -63,11 +63,16 @@ body {
   padding: 3% 0 0;
   font-family: OsansR, sans-serif;
   animation-name: stagger;
-  animation-duration: 0.5s;
+  animation-duration: 0.75s;
 }
 .jap {
   font-family: OsansR, sans-serif;
 }
+input[type="button"] {
+  background-color: whitesmoke;
+  color: black;
+}
+
 header {
   padding: 0px 0;
   position: fixed;
@@ -90,6 +95,7 @@ p {
   padding: 1px 5%;
   margin: 1px;
   align-items: center;
+  background-color: var(--bgColor)
 }
 header p {
   padding: 0;
