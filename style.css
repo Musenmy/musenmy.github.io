@@ -72,6 +72,10 @@ input[type="button"] {
   background-color: whitesmoke;
   color: black;
 }
+input[type="button"]:disabled {
+  background-color: #cccccc; /* 無効化時の背景色をグレーに設定 */
+  color: #000000;
+}
 
 header {
   padding: 0px 0;
@@ -95,12 +99,12 @@ p {
   padding: 1px 5%;
   margin: 1px;
   align-items: center;
-  background-color: var(--bgColor)
 }
 header p {
   padding: 0;
   margin: 10px 2% 5px 3%;
   color: black;
+  background-color: gainsboro;
 }
 a {
   color: var(--linkColor);
