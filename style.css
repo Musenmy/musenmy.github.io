@@ -65,6 +65,17 @@ body {
   animation-name: load;
   animation-duration: 0.75s;
 }
+table {
+  background-color: var(--pColor);
+}
+td {
+  text-align: center;
+  color: var(--pColor);
+}
+th {
+  background-color: var(--pColor);
+  color: var(--bgColor);
+}
 .jap {
   font-family: OsansR, sans-serif;
 }
