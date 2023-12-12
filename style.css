@@ -132,6 +132,10 @@ header p {
   color: black;
   background-color: gainsboro;
 }
+table {
+  margin: auto;
+  width: 94%;
+}
 a {
   color: var(--linkColor);
 }
