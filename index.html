@@ -21,6 +21,15 @@
 
   gtag('config', 'G-3SWSM9QNQJ');
 </script>
+   <script>
+    // ページ読み込み時に実行される処理
+    window.onload = function() {
+      // 現在のURLがindex.htmlを含んでいる場合、ドメイン名.comへの301リダイレクトを行う
+      if (window.location.href.includes("index.html")) {
+        window.location.replace(window.location.href.replace("index.html", ""));
+      }
+    };
+  </script>
    <body>
       <div id="header">
          <!-- ここにheader.htmlが読み込まれる -->
