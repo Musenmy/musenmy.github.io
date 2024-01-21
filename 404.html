@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- GoogleTag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-3SWSM9QNQJ');
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="../fav.ico" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>404 Not Found - Musenmy's HP</title>
+    <meta name="description" content="ページが見つかりません">
+    
+    <!-- 公開するページはこの下の1行（検索エンジンからの無視設定）を削除してください-->
+    <meta name="robots" content="noindex">
+  </head>
+
+
+ <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+
+    <!-- ここより下に書いてください -->
+
+    <br /><br />
+    <h1>404 Not Found</h1>
+    <br />
+    <p class="center">
+      お探しのページは見つかりませんでした
+    </p>
+    <br /><br />
+
+   <p class="center">以下の原因が考えられます。</p>
+   <p class="center">・存在しないページにアクセスしようとした<br>・ページが削除された<br>・このページは現在編集中である</p>
+   <br><br>
+   <p class="center"><a href="https://musenmy.github.io">トップページに戻る</a></p>
+
+    <br /><br />
+
+    <!-- ここより上に書いてください -->
+
+    <br /><br />
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("../footer.html");
+      });
+    </script>
+  </body>
+</html>
