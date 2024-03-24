@@ -1,262 +1,117 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <title>Relicerの使い方 - Musenmy</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="Relicerの使い方について詳しく解説しています。">
-    
+    <meta name="description" content="Relicerの使い方について詳しく解説しています。" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <link rel="icon" href="../fav.ico" />
     <link rel="stylesheet" href="/style.css" />
-  </head>
-
-
+</head>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-3SWSM9QNQJ');
+    gtag("config", "G-3SWSM9QNQJ");
 </script>
 
-  <body>
+<body>
     <div id="header">
-      <!-- ここにheader.htmlが読み込まれる -->
+        <!-- ここにheader.htmlが読み込まれる -->
     </div>
 
     <script>
-      $(function () {
-        $("#header").load("../header.html");
-      });
+        $(function () {
+            $("#header").load("../header.html");
+        });
     </script>
 
     <br /><br />
     <h1>Relicer 詳しい使い方</h1>
-<br><br>
-<h2>スタミナ計算<br>/hsr-staminaと/genshin-stamina</h2>
-<br>
-<p>対応するほうのコマンドを実行し、引数として現在の樹脂または開拓力を入力してください。<br>
-全回復が今日か明日か・それが何時何分で何時間後かが出力されます。</p>
-<br><br>
-    <h2>スターレイルのビルドカード作成<br>/hsr-char</h2>
-<br>
-<p>コマンドを実行すると入力欄が出現します。<br>
-入力欄の上から順にユーザーID、キャラの番目か名前、スコア計算基準を入力してください<br>
-<a href="https://musenmy.github.io/relicer/hsr/char-name.html">認識できるキャラ名の一覧</a>に書いてあるものなら表記揺れに対応できます<br>
-追加要望はDiscord公式サーバーで提案してください<br>
-<a href="https://musenmy.github.io/relicer/hsr/scoring.html">計算式や評価基準はこちらから確認できます</a><br>
-工事中
-</p>
-<br><br>
-    <h2>原神のビルドカード作成<br />/genshin-char</h2>
+    <br /><br />
+    <h2>スタミナ計算<br />/hsr-staminaと/genshin-stamina</h2>
     <br />
-    <div class="doFlex">
-      <div class="flex1">
-        <p>
-          コマンドを実行すると入力欄が出現します。<br />
-          入力欄の上から順にユーザーID、読み込むキャラ、スコア計算方法を入力してください。<br />
-          計算方法は今のところ攻撃/HP/防御/チャージ/元素熟知に対応しています。<br />
-          APIの仕様上、プロフィールで公開されているキャラのみ読み込めます。<br />
-        </p>
-        <br /><br />
-
-        <br />
-        <input id="acd1" class="acd-check" type="checkbox" />
-        <label class="acd-label" for="acd1">
-          <p class="center">キャラ名として認識するもの▼</p>
-        </label>
-        <div class="acd-content">
-          <p class="jap">
-            <b>追加要望があればお気軽にお問い合わせください。</b><br />
-            ・aether/lumine/traveller/そら/ほたる/空/蛍 → 旅人<br />
-            ・jean/じん → ジン<br />
-            ・amber/あんばー → アンバー<br />
-            ・lisa/りさ → リサ<br />
-            ・kaeya/gaia/がいあ → ガイア<br />
-            ・barbara/page/ばーばら → バーバラ<br />
-            ・diluc/でぃるっく → ディルック<br />
-            ・lazor/れざー → レザー<br />
-            ・venti/うぇんてぃ → ウェンティ<br />
-            ・klee/くれー/クレーちゃん → クレー<br />
-            ・bennett/べねっと/べね → ベネット<br />
-            ・noelle/noel/のえる → ノエル<br />
-            ・fischl/ふぃっしゅる → フィッシュル<br />
-            ・sucrose/shatang/すくろーす → スクロース<br />
-            ・mona/もな → モナ<br />
-            ・diona/でぃおな → ディオナ<br />
-            ・albedo/あるべど → アルベド<br />
-            ・rosaria/ろさりあ → ロサリア<br />
-            ・eula/えうるあ → エウルア<br />
-            ・aloy/あーろい → アーロイ<br />
-            ・mika/みか → ミカ<br />
-            ・beidou/ほくと/ホクト → 北斗<br />
-            ・ningguang/ぎょうこう/ギョウコウ → 凝光<br />
-            ・tartaglia/childe/たるたりや/タルタル → タルタリヤ<br />
-            ・yelan/いぇらん/イェラン → 夜蘭<br />
-            ・hutao/hu tao/ふーたお/フータオ → 胡桃<br />
-            ・ganyu/かんう/カンウ → 甘雨<br />
-            ・shenhe/しんかく/シンカク → 申鶴<br />
-            ・qiqi/なな/ナナ → 七七<br />
-            ・zhongli/しょうり/ショウリ → 鍾離<br />
-            ・xiao/しょう/ショウ → 魈<br />
-            ・keqing/こくせい/コクセイ → 刻晴<br />
-            ・yanfei/えんひ/エンヒ → 煙緋<br />
-            ・xinyan/しんえん/シンエン → 辛炎<br />
-            ・xingqiu/ゆくあき/ユクアキ → 行秋<br />
-            ・chongyun/ちょううん/チョウウン → 重雲<br />
-            ・yunjin/yun jin/うんきん/ウンキン → 雲菫<br />
-            ・yaoyao/ヨーヨ/よーよ/よぉーよ → ヨォーヨ<br />
-            ・ayaka/あやか/綾華 → 神里綾華<br />
-            ・ayato/あやと/綾人 → 神里綾人<br />
-            ・kazuha/かずは/カズハ/万葉 → 楓原万葉<br />
-            ・yoimiya/よいみや/ヨイミヤ → 宵宮<br />
-            ・sayu/さゆ/サユ → 早柚<br />
-            ・shogun/shougun/raiden/雷電/将軍/影 → 雷電将軍<br />
-            ・sara/さら/沙羅 → 九条沙羅<br />
-            ・kokomi/ここみ/ここみん/心海 → 珊瑚宮心海<br />
-            ・thoma/とーま → トーマ<br />
-            ・itto/一斗/いっと → 荒瀧一斗<br />
-            ・gorou/goro/ごろー → ゴロー<br />
-            ・yaemiko/yae/miko/やえみこ/やえ/みこ/八重/神子 → 八重神子<br />
-            ・shinobu/しのぶ/忍 → 久岐忍<br />
-            ・heizou/へいぞう/平蔵 → 鹿野院平蔵<br />
-            ・tighnali/tighnari/てぃなり → ティナリ<br />
-            ・collei/corei/これい → コレイ<br />
-            ・dory/dori/どりー → ドリー<br />
-            ・cyno/せの → セノ<br />
-            ・candace/きゃんでぃす → キャンディス<br />
-            ・nilou/にぃろう/二浪 → ニィロウ<br />
-            ・nahida/なひーだ/なひ/ナヒナヒ/ナヒ/なっひ → ナヒーダ<br />
-            ・layla/れいら → レイラ<br />
-            ・wanderer/scaramouche/balladeer/国崩/散兵/ほうろうしゃ/すからましゅ/スカラマシュ/さんぺい/さんぴょう/ざんぴょう
-            → 放浪者<br />
-            ・faruzan/farzan/farsan/ふぁるざん → ファルザン<br />
-            ・alheitham/あるはいぜん → アルハイゼン<br />
-            ・dehya/でぃしあ → ディシア<br />
-            ・kaveh/かーヴぇ/かーべ → カーヴェ<br />
-            ・charlotte/しゃるろっと → シャルロット<br />
-            ・lyney/りね → リネ<br />
-            ・lynette/りねっと → リネット<br />
-            ・freminet/ふれみね → フレミネ<br />
-            ・navia/なゔぃあ/ナビア/なびあ → ナヴィア<br />
-            ・clorinde/くろりんで → クロリンデ<br />
-            ・sigewinne/しぐうぃん → シグウィン<br />
-            ・wriothesley/りおせすり → リオセスリ<br />
-            ・neuvillette/ぬゔぃれっと/ぬびれっと → ヌヴィレット<br />
-            ・furina/ふりーな → フリーナ<br />
-          </p>
-        </div>
-        <br />
-        <input id="acd2" class="acd-check" type="checkbox" />
-        <label class="acd-label" for="acd2">
-          <p class="center">計算基準として認識するもの▼</p>
-        </label>
-        <div class="acd-content">
-          <p>
-            ・攻撃力/攻击力/ATK/attack → 攻撃<br />
-            ・防御力/DEF/defense/defence → 防御<br />
-            ・体力/生命/生命値/health → HP<br />
-            ・元素チャージ効率/充能/充能效率/元チャ/元素チャージ/チャージ効率/原チャ効率/元チャ効率/ER/charge/recharge
-            → チャージ<br />
-            ・元素熟知/元素精通/精通/EM/mastery → 熟知<br />
-          </p>
-        </div>
-      </div>
-      <br />
-      <div class="flex2">
-        <input id="acd3" class="acd-check" type="checkbox" />
-        <label class="acd-label" for="acd3">
-          <p class="center">計算方法▼</p>
-        </label>
-        <div class="acd-content">
-          <p>
-            ・攻撃<br />
-            会心率x2 + 会心ダメ + 攻撃% + 攻撃/9<br />
-            ・防御<br />
-            会心率x2 + 会心ダメ + 防御% + 防御/9<br />
-            ・HP<br />
-            会心率x2 + 会心ダメ + HP% + HP/120<br />
-            ・チャージ<br />
-            会心率x2 + 会心ダメ + チャージ<br />
-            ・熟知<br />
-            会心率x2 + 会心ダメ + 熟知/5<br />
-            <br />
-            正確としてある程度広まっている式を採用しています<br />
-            (9や120は基礎値のおおよその平均)<br>
-            今後は%のみカウントする式や、カスタム提案をいただいた式にも対応する予定です。
-          </p>
-        </div>
-        <br />
-
-        <input id="acd4" class="acd-check" type="checkbox" />
-        <label class="acd-label" for="acd4">
-          <p class="center">スコア基準▼</p>
-        </label>
-        <div class="acd-content">
-          <p>
-            27以下：D <br />
-            27〜35：C <br />
-            35〜40：B <br />
-            40〜45：A <br />
-            45〜50：S <br />
-            50〜55：SS <br />
-            55以上：SSS <br />
-
-            少し厳しめに設定しています。<br />
-            %以外もスコアに加算しているため、理論値は62.3です。<br />
-            合計スコアは上の数値を5倍したもので評価しています。
-          </p>
-        </div>
-        <br />
-
-        <br />
-
+    <p>
+        対応するほうのコマンドを実行し、引数として現在の樹脂または開拓力を入力してください。<br />
+        全回復が今日か明日か・それが何時何分で何時間後かが出力されます。
+    </p>
+    <br /><br />
+    <h2>スターレイルのビルドカード作成<br />/hsr-char</h2>
+    <br />
+    <p>
+        コマンドを実行すると入力欄が出現します。<br />
+        入力欄の上から順にユーザーID、キャラの番目か名前、スコア計算基準、オプションを入力してください<br />
+        <a href="https://musenmy.github.io/relicer/hsr/char-name.html">認識できるキャラ名の一覧</a>に書いてあるものなら表記揺れに対応できます<br />
+        追加要望はDiscord公式サーバーで提案してください<br />
+        <a href="https://musenmy.github.io/relicer/hsr/scoring.html">計算式や評価基準はこちらから確認できます</a><br />
         <p class="center">生成画像のサンプル</p>
         <div class="center">
           <img
-            src="https://cdn.discordapp.com/attachments/1114737159119831151/1160606935503089694/RelicerImageGI.webp?ex=65354670&is=6522d170&hm=15b3b5eb0f3c0b56b479e48662a04468986213bf20140717af9ba5af22f5a9f7&"
-            alt="Relicerが生成した原神ビルドカードの画像"
-            width="90%"
+            src="https://musenmy.github.io/relicer/Relicer-HSR-Sample.webp"
+            alt="Relicerが生成したスタレビルドカードの画像"
+            height="150px"
           />
         </div>
-        <br />
-      </div>
-    </div>
-    <br /><br />
-    <h2 class="jap">アカウントの概要を取得<br />/genshin-detailと/hsr-detail</h2>
-    <br />
-    <p class="jap">UIDを入力し、螺旋や庭の進捗やアチーブ数などを確認できます。</p>
-    <br /><br />
-    <h2 class="jap">聖遺物の経験値を計算<br />/genshin-arti-xp</h2>
-    <br />
-    <p class="jap">
-      聖遺物のレアリティとレベルを指定して、強化の必要素材を計算します。<br />
-      現在☆3～☆5にのみ対応しています。
     </p>
     <br /><br />
-    <h2 class="jap">強化の素材を計算<br />/genshin-material</h2>
+    <h2>原神のビルドカード作成<br />/genshin-char</h2>
     <br />
-    <p class="jap">
-      UIDとキャラ名を入力し、最大レベルまでの素材を計算します。<br />
-      公式ツールと異なりレベル途中の端数も計算されます。Lv81以降では結果に差が出るかも？<br />
-      今後のアップデートで任意のレベルを目標にできるようにする予定です。<br />
+    <p>
+        コマンドを実行すると入力欄が出現します。<br />
+        入力欄の上から順にユーザーID、キャラの番目か名前、スコア計算基準を入力してください<br />
+        <a href="https://musenmy.github.io/relicer/genshin/char-name.html">認識できるキャラ名の一覧</a>に書いてあるものなら表記揺れに対応できます<br />
+        追加要望はDiscord公式サーバーで提案してください<br />
+        <a href="https://musenmy.github.io/relicer/genshin/scoring.html">計算式や評価基準はこちらから確認できます</a><br />
+        <p class="center">生成画像のサンプル</p>
+        <div class="center">
+          <img
+            src="https://musenmy.github.io/relicer/Relicer-GI-Sample.webp"
+            alt="Relicerが生成した原神ビルドカードの画像"
+            height="150px"
+          />
+        </div>
+    </p>
+    <br /><br />
+    <h2>アカウントの概要を取得<br />/genshin-detailと/hsr-detail</h2>
+    <br />
+    <p>UIDを入力し、螺旋や庭の進捗やアチーブ数などを確認できます。</p>
+    <br /><br />
+    <h2>聖遺物の経験値を計算<br />/genshin-arti-xp</h2>
+    <br />
+    <p>
+        聖遺物のレアリティとレベルを指定して、強化の必要素材を計算します。<br />
+        現在☆3～☆5にのみ対応しています。
+    </p>
+    <br /><br />
+    <h2>強化の素材を計算<br />/genshin-material</h2>
+    <br />
+    <p>
+        UIDとキャラ名を入力し、最大レベルまでの素材を計算します。<br />
+        公式ツールと異なりレベル途中の端数も計算されます。Lv81以降では結果に差が出るかも？<br />
+        今後のアップデートで任意のレベルを目標にできるようにする予定です。<br />
     </p>
 
     <br /><br />
     <div id="footer">
-      <!-- ここにfooter.htmlが読み込まれる -->
+        <!-- ここにfooter.htmlが読み込まれる -->
     </div>
 
     <script>
-      $(function () {
-        $("#footer").load("../footer.html");
-      });
+        $(function () {
+            $("#footer").load("../footer.html");
+        });
     </script>
-  </body>
+</body>
+
 </html>
