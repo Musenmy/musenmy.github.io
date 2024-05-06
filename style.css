@@ -5,6 +5,9 @@
     --pColor: #202124;
     --linkColor: #065fd4;
   }
+  .darkonly{
+    display: none;
+  }
 }
 /*dark mode*/
 @media (prefers-color-scheme: dark) {
@@ -12,6 +15,9 @@
     --bgColor: #202124;
     --pColor: whitesmoke;
     --linkColor: #83aaeb;
+  }
+  .lightonly{
+    display: none;
   }
 }
 /*pc, large display*/
