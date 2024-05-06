@@ -20,14 +20,12 @@
   gtag('js', new Date());
 
   gtag('config', 'G-3SWSM9QNQJ');
-</script>
-   <script>
-    window.onload = function() {
-      // 現在のURLがindex.htmlを含んでいる場合、ドメイン名.comへの301リダイレクトを行う
-      if (window.location.href.includes("index.html")) {
-        window.location.replace(window.location.href.replace("index.html", ""));
-      }
-    };
+  //redirect not to index.html
+  window.onload = function() {
+    if (window.location.href.includes("index.html")) {
+      window.location.replace(window.location.href.replace("index.html", ""));
+    }
+  };
   </script>
    <body>
       <div id="header">
@@ -72,12 +70,12 @@
       <div>
         <h2>Relicer公式X（旧Twitter）</h2>
         <br>
-        <div class="lightonly">
+        <div class="darkonly">
           <a class="twitter-timeline tw-align-center" data-theme="dark" href="https://twitter.com/Relicer_JP?ref_src=twsrc%5Etfw">Tweets by Relicer_JP</a>
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div class="lightonly">
-          <a class="twitter-timeline tw-align-center" data-width="94%" data-height="600" href="https://twitter.com/Relicer_JP?ref_src=twsrc%5Etfw">Tweets by Relicer_JP</a>
+          <a class="twitter-timeline tw-align-center" data-theme="light" data-width="94%" data-height="600" href="https://twitter.com/Relicer_JP?ref_src=twsrc%5Etfw">Tweets by Relicer_JP</a>
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
