@@ -31,9 +31,12 @@
       <div id="header">
          <!-- ここにheader.htmlが読み込まれる -->
       </div>
+      <div id="localeWarn">
+      </div>
       <script>
          $(function () {
            $("#header").load("/header.html");
+                       $("#localeWarn").load("/localeWarn.html");
          });
       </script>
       <br /><br />
