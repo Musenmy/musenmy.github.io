@@ -28,17 +28,15 @@
   };
   </script>
    <body>
-      <div id="header">
-         <!-- ここにheader.htmlが読み込まれる -->
-      </div>
-      <div id="localeWarn">
-      </div>
-      <script>
-         $(function () {
-           $("#header").load("/header.html");
-                       $("#localeWarn").load("/localeWarn.html");
-         });
-      </script>
+    <div id="header">
+      <!-- ここにheader.htmlが読み込まれる -->
+    </div>
+    <script>
+      $(function () {
+         $("#header").load("/header.html");
+      });
+    </script>
+    <script src="/localeWarn.js"></script>
       <br /><br />
       <h1>Musenmy's HP</h1>
       <br />
