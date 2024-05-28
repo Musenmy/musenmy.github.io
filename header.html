@@ -3,5 +3,54 @@
   <a class="btn" href="https://musenmy.github.io">TOP</a>
   <a class="btn" href="https://musenmy.github.io/contact.html">Contact</a>
   <a class="btn" href="https://musenmy.github.io/relicer/top.html">Relicer</a>
-  <noscript>ページを正しく動作させるためにJavaScriptを有効にしてください</noscript>
 </header>
+
+    <style>
+        #message {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+        }
+        #redirect-link {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+
+    <div id="message">
+        <p>Your browser is not Japanese. View English page?</p>
+        <p id="localeView"></p>
+        <p><a id="redirect-link" href="#">Show English Page</a></p>
+    </div>
+    <script>
+        // ユーザーのロケールを取得
+        const userLocale = navigator.language || navigator.userLanguage;
+        const currentUrl = window.location.href;
+
+        // ロケールが日本語でない場合にメッセージを表示
+        if (!userLocale.match(/ja/) && !currentUrl.match(/en/) {
+            const messageElement = document.getElementById('message');
+            const localeView = document.getElementById('localeView');
+          const redirectLink = document.getElementById('redirect-link');
+          
+            // 英語のページのURLを設定
+            let englishUrl;
+            if (currentUrl.match(/\/ja\//)) {
+                // URLに /ja/ が含まれている場合、 /en/ に置き換える
+                englishUrl = currentUrl.replace(/\/ja\//, '/en/');
+            } else {
+                // URLに /ja/ や /en/ が含まれていない場合、英語の index.html にリダイレクト
+                englishUrl = "en/index.html"
+            }
+
+            // リンクにURLを設定
+            redirectLink.href = englishUrl;
+          localeView.innerHTML = `Your locale is ${userLocale}.`
+
+            // メッセージを表示
+            messageElement.style.display = 'block';
+        }
+    </script>
