@@ -1,13 +1,30 @@
 <header>
-  <p>Musenmy's HP</p>
-  <a class="btn" href="https://musenmy.github.io">TOP</a>
-  <a class="btn" href="https://musenmy.github.io/contact.html">Contact</a>
-  <a class="btn" href="https://musenmy.github.io/relicer/top.html">Relicer</a>
+  <p>Relicer/p>
+  <a class="btn" id="link-ja" href="/ja/index.html">JA</a>
+  <a class="btn" id="link-en" href="/en/index.html">EN</a>
+  <a class="btn" id="link-zh" href="/zh/index.html">ZH</a>
 </header>
+<script>
+// 現在のURLを解析し、言語部分を変更する関数
+function getRedirectUrl(language) {
+    // 現在のURLを取得
+    const currentUrl = window.location.href;
+    
+    // 言語部分を抽出
+    const urlParts = currentUrl.split('/');
+    
+    // 言語部分は4番目の部分 (0から数える)
+    urlParts[3] = language;
+    
+    // 新しいURLを生成
+    return urlParts.join('/');
+}
 
-    <div id="message">
-        <p>Your browser is not Japanese. View English page?</p>
-        <p id="localeView"></p>
-        <p><a id="redirect-link" href="#">Show English Page</a></p>
-    </div>
-  
+// ページが読み込まれたときにリンクを設定
+window.onload = function() {
+    // 各言語へのリンクを設定
+    document.getElementById('link-en').href = getRedirectUrl('EN');
+    document.getElementById('link-ja').href = getRedirectUrl('JA');
+    document.getElementById('link-zh').href = getRedirectUrl('ZH');
+};
+</script>
