@@ -63,6 +63,19 @@
   transition: 0.75s;
   background-color: var(--bgColor);
 }
+
+#message {
+  display: none;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  background-color: var(--bgColor);
+  margin: 60px 3% 0 3%;
+}
+#redirect-link {
+  color: #83aabb;
+  text-decoration: underline;
+  cursor: pointer;
+}
 body {
   margin: 0;
   position: relative;
