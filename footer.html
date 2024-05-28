@@ -1,41 +1,8 @@
 
 <footer>
   <p class="left">Musenmy<br />Meet in Discord.</p>
-  <p class="right">Copyright<br />Musenmy 2021-2023</br>
+  <p class="right">Copyright<br />Musenmy 2021-2024</br>
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Relicerの開発者のサイトを見てきたよ" data-via="Relicer_JP" data-hashtags="Relicer" data-size="large" data-show-count="false">Tweet</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 </footer>
-
-  <script>
-        // ユーザーのロケールを取得
-        const userLocale = navigator.language || navigator.userLanguage;
-        const currentUrl = window.location.href;
-
-              console.log(userLocale,currentUrl)
-
-        
-        // ロケールが日本語でない場合にメッセージを表示
-        if (!userLocale.match(/ja/) && !currentUrl.match(/en/) {
-            const messageElement = document.getElementById('message');
-            const localeView = document.getElementById('localeView');
-          const redirectLink = document.getElementById('redirect-link');
-          
-            // 英語のページのURLを設定
-            let englishUrl;
-            if (currentUrl.match(/\/ja\//)) {
-                // URLに /ja/ が含まれている場合、 /en/ に置き換える
-                englishUrl = currentUrl.replace(/\/ja\//, '/en/');
-            } else {
-                // URLに /ja/ や /en/ が含まれていない場合、英語の index.html にリダイレクト
-                englishUrl = "en/index.html"
-            }
-
-            // リンクにURLを設定
-            redirectLink.href = englishUrl;
-          localeView.innerHTML = `Your locale is ${userLocale}.`
-
-            // メッセージを表示
-            messageElement.style.display = 'block';
-        }
-    </script>
