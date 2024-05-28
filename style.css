@@ -36,14 +36,6 @@
     padding: 0 0 0 0%;
   }
 }
-/*tablet, medium display*/
-@media (min-width: 600px) {
-  /*no content*/
-}
-/*phone, small display*/
-@media (max-width: 600px) {
-  /*no content*/
-}
 /*fetch font*/
 @font-face {
   font-family: "OsansL";
@@ -82,7 +74,7 @@ body {
   padding: 3% 0 0;
   font-family: OsansR, sans-serif;
   animation-name: load;
-  animation-duration: 0.75s;
+  animation-duration: 0.8s;
   animation-delay: 0.001s;
 }
 table {
@@ -251,10 +243,8 @@ input[type="checkbox"] {
 @keyframes load {
   0% {
     opacity: 0;
-    right: -60%;
   }
   100% {
     opacity: 1;
-    right: 0px;
   }
 }
