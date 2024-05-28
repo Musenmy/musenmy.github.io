@@ -24,6 +24,9 @@
         const userLocale = navigator.language || navigator.userLanguage;
         const currentUrl = window.location.href;
 
+              console.log(userLocale,currentUrl)
+
+        
         // ロケールが日本語でない場合にメッセージを表示
         if (!userLocale.match(/ja/) && !currentUrl.match(/en/) {
             const messageElement = document.getElementById('message');
