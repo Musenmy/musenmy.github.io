@@ -49,7 +49,7 @@
       });
     </script>
     <script>
-       window.onload = function() {
+       window.setTimeout ( function() {
             // 現在のURLを取得
             const currentUrl = window.location.pathname;
             // URLから言語コードを取得
@@ -79,7 +79,7 @@
             const homeLink = document.getElementById('home-link');
             homeLink.textContent = message.home;
             homeLink.href = `/${lang}/index.html`;
-        };
+        }, 500 )
     </script>
   </body>
 </html>
