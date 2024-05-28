@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+      <meta charset="utf-8" />
+      <title>Relicer公式サイト</title>
+      <meta name="google-site-verification" content="NuF6riIoRXpsvCDCXbQKRadrIbF6mi1v-O0dBFuLDV8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <link rel="stylesheet" href="/style.css" />
+   </head>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3SWSM9QNQJ');
+  </script>
+   <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+         $("#header").load("/header.html");
+      });
+    </script>
+    <script src="/localeWarn.js"></script>
+      <br /><br />
+      <h1>Relicer Official Site</h1>
+      <br />
+      <br />
+      <div class="doFlex">
+         <div class="flex1">
+            <h2>
+               Relicerについて
+            </h2>
+            <br />
+            <p class="center jap">原神やスターレイルのビルドカードが作れたり、育成素材の計算ができたりするBotです。<br /><br />
+               界隈初のスターレイル対応<br />
+               (リリース日である2023年5月23日に実施した運営の調査による）
+            </p>
+            <br />
+         </div>
+         <div class="flex2">
+            <h2>リニューアル中</h2>
+            <br><br />
+         </div>
+      </div>
+
+      <br /><br />
+      <div id="footer"></div>
+      <script>
+         $(function () {
+           $("#footer").load("../footer.html");
+         });
+      </script>
+   </body>
+</html>
