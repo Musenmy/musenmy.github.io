@@ -2,7 +2,7 @@
 <html lang="ja">
    <head>
       <meta charset="utf-8" />
-      <title>Relicer公式サイト</title>
+      <title>Error 301 - Relicer</title>
       <meta name="google-site-verification" content="NuF6riIoRXpsvCDCXbQKRadrIbF6mi1v-O0dBFuLDV8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,48 +27,38 @@
   };
   </script>
    <body>
-    <div id="header">
-      <!-- ここにheader.htmlが読み込まれる -->
+    <style>
+      body {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .container {
+        display: inline-block;
+        text-align: center;
+      }
+      .lang-button {
+        padding: 0;
+        margin: 20px 1%;
+        color: gainsboro;
+        width: 60vw;
+        height: 8vh;
+        background-color: #1e90ff;
+        display: block;
+        text-align: center;
+        line-height: 8vh;
+        font-size: 4vh;
+        text-decoration: none;
+      }
+    </style>
+    <h1>301 Moved Permanently</h1>
+    <p>
+      This page has been permanently moved. Please select your preferred
+      language to show renewed page:
+    </p>
+    <div class="container">
+      <a href="new-url-ja" class="lang-button">日本語</a>
+      <a href="new-url-en" class="lang-button">English</a>
+      <a href="new-url-zh" class="lang-button">中文</a>
     </div>
-    <script>
-      $(function () {
-         $("#header").load("/header.html");
-      });
-    </script>
-    <script src="/localeWarn.js"></script>
-      <br /><br />
-      <h1>Relicer Official Site</h1>
-      <br />
-      <br />
-      <div class="doFlex">
-         <div class="flex1">
-            <h2>
-               Relicerについて
-            </h2>
-            <br />
-            <p class="center jap">原神やスターレイルのビルドカードが作れたり、育成素材の計算ができたりするBotです。<br /><br />
-               界隈初のスターレイル対応<br />
-               (リリース日である2023年5月23日に実施した運営の調査による）
-            </p>
-            <p class="center">
-               リニューアル中
-            </p>
-            <br />
-         </div>
-         <div class="flex2">
-            <h2>リニューアル中</h2>
-            <br><br />
-         </div>
-      </div>
-
-      <br /><br /><br />
-      <div id="footer">
-         <!-- ここにfooter.htmlが読み込まれる -->
-      </div>
-      <script>
-         $(function () {
-           $("#footer").load("../footer.html");
-         });
-      </script>
-   </body>
+  </body>
 </html>
