@@ -83,6 +83,7 @@ body {
   font-family: OsansR, sans-serif;
   animation-name: load;
   animation-duration: 0.75s;
+  animation-delay: 0.001s;
 }
 table {
   background-color: var(--pColor);
