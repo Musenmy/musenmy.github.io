@@ -158,6 +158,12 @@ table {
 a {
   color: var(--linkColor);
 }
+header a {
+  color: blue;
+}
+a.siteName {
+  color: #202124;
+}
 a.btn {
   padding: 0;
   margin: 5px 1%;
@@ -169,9 +175,6 @@ a.btn {
   text-align: center;
   line-height: 30px;
   text-decoration: none;
-}
-header a {
-  color: blue;
 }
 h1 {
   font-size: 40px;
