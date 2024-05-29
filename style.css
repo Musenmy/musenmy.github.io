@@ -163,6 +163,7 @@ header a {
 }
 a.siteName {
   color: #202124;
+  background-color: transparent;
 }
 a.btn {
   padding: 0;
