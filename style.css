@@ -138,6 +138,13 @@ p {
   margin: 1px;
   align-items: center;
 }
+li {
+  font-size: 16px;
+  color: var(--pColor);
+  padding: 1px 5%;
+  margin: 1px;
+  align-items: center;
+}
 header p {
   padding: 0;
   margin: 10px 2% 5px 3%;
