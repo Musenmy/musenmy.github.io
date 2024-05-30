@@ -134,11 +134,18 @@
         let urls = {
           bot: "https://discord.com/api/oauth2/authorize?client_id=1073165731182673990&permissions=414464731200&scope=guilds.join%20bot%20applications.commands&response_type=code",
           com: "https://discord.com/invite/juJAFbvnta",
-          use: "/ja/instructions"
         };
         let url = urls[typ] || "#";
         window.open(url, "_blank");
       }
+          function openUrl(typ) {
+        let urls = {
+          use: "/ja/instructions.html"
+        };
+        let url = urls[typ] || "#";
+        window.open(url);
+      }       
+
 
       const consent_chk = document.querySelector(`#consent-chk`);
       const submit_btn = document.querySelector(`#invite-bot`);
