@@ -101,10 +101,31 @@
    </div>
    <div class="doFlex">
       <div class="flex1">
+         <h2>ゼンゼロのビルドカード生成<br />/zzz-char</h2>
+         <br />
+         <p>コマンド実行後に表示されるモーダルに<strong>ジェネレーターで生成したJSONデータ（UIDではありません）</strong>を入力すると、ベータ版のビルドカードを生成できます。</p>
+         <p>UIDからデータが取得できるようになれば、更新して原神・スタレと同等の機能を持たせる予定です。</p>
+         <p>
+            <input type="button" onclick="openUrl(`zzzGen`)" value="データジェネレーター" /><br><br>
+         </p>
+         <br /><br />
+      </div>
+      <div class="flex2">
+         <h2>サーバー状態を確認<br />/ping</h2>
+         <br />
+         <p>
+           コマンドを実行するとBotの回線遅延および各APIの応答時間が返されます。<br />
+           APIがダウンしている場合はそのことも確認できます。他コマンドがエラーする場合にはRelicerのせいかAPIのせいかを確認してからお問い合わせください。
+         </p>
+         <br /><br />
+      </div>
+   </div>
+   <div class="doFlex">
+      <div class="flex1">
          <h2>アカウントの概要を取得<br />/hsr-detailと/gi-detail</h2>
          <br />
          <p>コマンド実行後に表示されるモーダルにUIDを入力すると、螺旋・庭の進捗やアチーブ数などを確認できます。</p>
-         <p>※スターレイルの本機能は最新版ではありません。次回のアップデートで更新する予定です。</p>
+         <p></p>
          <br /><br />
       </div>
       <div class="flex2">
@@ -128,11 +149,10 @@
          <br /><br />
       </div>
       <div class="flex2">
-         <h2>サーバー状態を確認<br />/ping</h2>
+         <h2>Coming Soon...<br />/unknown</h2>
          <br />
          <p>
-           コマンドを実行するとBotの回線遅延および各APIの応答時間が返されます。<br />
-           APIがダウンしている場合はそのことも確認できます。他コマンドがエラーする場合にはRelicerのせいかAPIのせいかを確認してからお問い合わせください。
+           今後も新しいコマンドが追加されるかも？
          </p>
          <br /><br />
       </div>
@@ -151,6 +171,7 @@
             hsrScore: "/ja/hsr/scoring.html",
             giName: "/ja/genshin/char-name.html",
             hsrName: "/ja/hsr/char-name.html",
+            zzzGen: "/ja/zzz/generator.html"
          };
          let url = urls[typ] || "#";
          window.open(url);
