@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- GoogleTag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>原神評価基準 - Relicer</title>
+    <meta name="description" content="Relicerでの原神の評価基準および計算式を記載しています" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+
+    <!-- ここより下に書いてください -->
+
+    <br /><br />
+    <h1>原神評価基準</h1>
+    <br />
+    <p class="center">Relicerでの原神のスコアリングについて解説しています</p>
+    <br /><br />
+
+    <div class="center" id="evals">
+      <h2>スコア評価基準</h2>
+      <p>メインステ補正（後日別記事に記載予定）を含んだ値を評価しています</p>
+      <br /><br />
+      <table border="1" align="center" cellpadding="30">
+        <tr>
+          <th>評価</th>
+          <th>単体スコア</th>
+          <th>総合スコア</th>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>21 未満</td>
+          <td>105 未満</td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td>21 ～ 30</td>
+          <td>105 ～ 150</td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>30 ～ 36</td>
+          <td>150 ～ 180</td>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td>36 ～ 42</td>
+          <td>180 ～ 210</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>42 ～ 45</td>
+          <td>210 ～ 225</td>
+        </tr>
+        <tr>
+          <td>S+</td>
+          <td>45 ～ 48</td>
+          <td>225 ～ 240</td>
+        </tr>
+        <tr>
+          <td>SS</td>
+          <td>48 ～ 51</td>
+          <td>240 ～ 255</td>
+        </tr>
+        <tr>
+          <td>SS+</td>
+          <td>51 ～ 54</td>
+          <td>255 ～ 270</td>
+        </tr>
+        <tr>
+          <td>SSS</td>
+          <td>54 ～ 58.2</td>
+          <td>270 ～ 291</td>
+        </tr>
+        <tr>
+          <td>SSS+</td>
+          <td>58.2 ～ 62.4</td>
+          <td>291 ～ 312</td>
+        </tr>
+      </table>
+    </div>
+    <br /><br />
+    <div class="center" id="funcs">
+      <h2>スコア計算基準</h2>
+      <p>ヒーラーやサポーターでも活かせるように会心を含まない基準も設定されています</p>
+      <p>
+        上3つの基準（攻撃/HP/防御）をもとに全ての計算基準で理論値が等しくなるように調整されています<br />
+        これにより基準をまたいでも評価の比較ができます
+      </p>
+      <p>原神で拡張基準に対応してるサービスは少ないらしい？</p>
+      <br /><br />
+      <table border="1" align="center" cellpadding="30">
+        <tr>
+          <th>計算基準</th>
+          <th>式</th>
+        </tr>
+        <tr>
+          <td>HP</td>
+          <td>HP% + HP/138.25 + CR×2 + CD</td>
+        </tr>
+        <tr>
+          <td>攻撃</td>
+          <td>ATK% + ATK/9 + CR×2 + CD</td>
+        </tr>
+        <tr>
+          <td>防御</td>
+          <td>DEF%×0.8 + DEF/10.7 + CR×2 + CD</td>
+        </tr>
+        <tr>
+          <td>熟知</td>
+          <td>CR×2 + CD + EM×0.335</td>
+        </tr>
+        <tr>
+          <td>HPのみ</td>
+          <td>HP%×1.68 + HP/82.29</td>
+        </tr>
+        <tr>
+          <td>攻撃のみ</td>
+          <td>ATK%×1.68 + ATK/5.357</td>
+        </tr>
+        <tr>
+          <td>防御のみ</td>
+          <td>DEF%×1.344 + DEF/6.37</td>
+        </tr>
+        <tr>
+          <td>HPチャージ</td>
+          <td>（HP% + HP/138.25 + CR×2 + CD + ER×0.9）×0.944</td>
+        </tr>
+        <tr>
+          <td>攻撃チャージ</td>
+          <td>（ATK% + ATK/9 + CR×2 + CD + ER×0.9）×0.944</td>
+        </tr>
+        <tr>
+          <td>防御チャージ</td>
+          <td>（DEF%×0.8 + DEF/10.7 + CR×2 + CD + ER×0.9）×0.944</td>
+        </tr>
+        <tr>
+          <td>熟知チャージ</td>
+          <td>実装をお待ちください</td>
+        </tr>
+        <tr>
+          <td>HPのみチャージ</td>
+          <td>（HP% + HP/138.25 + ER×0.9）×1.453</td>
+        </tr>
+        <tr>
+          <td>攻撃のみチャージ</td>
+          <td>（ATK% + ATK/9 + ER×0.9）×1.453</td>
+        </tr>
+        <tr>
+          <td>防御のみチャージ</td>
+          <td>（DEF%×0.8 + DEF/10.7 + ER×0.9）×1.453</td>
+        </tr>
+        <tr>
+          <td>熟知のみチャージ</td>
+          <td>実装をお待ちください</td>
+        </tr>
+      </table>
+    </div>
+
+    <br /><br />
+
+    <!-- ここより上に書いてください -->
+
+    <br /><br />
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<header>
+  <p><a class="siteName" id="link-top" href="/ja/index.html">Relicer</a></p>
+  <a class="btn" id="link-ja" href="/ja/index.html">日本語</a>
+  <a class="btn" id="link-en" href="/en/index.html">English</a>
+  <a class="btn" id="link-zh" href="/zh/index.html">中文</a>
+</header>
+<script>
+function getRedirectUrl(language) {
+    const currentUrl = window.location.href;
+    const urlParts = currentUrl.split('/');
+    urlParts[3] = language;
+    return urlParts.join('/');
+}
+function getTopUrl(){
+    const currentUrl = window.location.href;
+    const lang = currentUrl.split('/')[3]
+    return `/${lang}/index.html`
+}
+
+// ページが読み込まれたときにリンクを設定
+window.onload = function() {
+    // 各言語へのリンクを設定
+    document.getElementById('link-en').href = getRedirectUrl('en');
+    document.getElementById('link-ja').href = getRedirectUrl('ja');
+    document.getElementById('link-zh').href = getRedirectUrl('zh');
+    document.getElementById('link-top').href = getTopUrl();
+};
+</script>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>お問い合わせ - Relicer</title>
+    <meta name="description" content="中の人へのお問い合わせ（日本語）">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3SWSM9QNQJ');
+</script>
+ <body>
+    <div id="header">
+      <!-- ここにheader.htmlが読み込まれる -->
+    </div>
+
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+
+    <br /><br />
+    <h1>お問い合わせ</h1>
+    <br />
+    <p class="center">
+      お問い合わせや中の人に対する依頼はこちらで受け付けております。
+    </p>
+    <br /><br />
+
+    <div class="doFlex">
+      <div class="flex1 center">
+        <h2>Relicerに関するもの</h2>
+        <br />
+        <p>Twitter @Relicer_JP</p>
+        <p>
+          Discord Server
+          <a href="https://discord.com/invite/juJAFbvnta">Relicer Community</a>
+        </p>
+        <br /><br />
+      </div>
+      <br />
+      <div class="flex2 center">
+        <h2>その他</h2>
+        <br />
+        <p>Twitter @Musenmy</p>
+        <p>Discord DM @musenmy</p>
+      </div>
+      <br />
+    </div>
+    <br /><br />
+
+    <br /><br />
+    <div id="footer">
+      <!-- ここにfooter.htmlが読み込まれる -->
+    </div>
+
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>

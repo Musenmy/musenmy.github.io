@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- GoogleTag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-3SWSM9QNQJ');
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="../fav.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Error 404 - Relicer</title>   
+    <!-- 公開するページはこの下の1行（検索エンジンからの無視設定）を削除してください-->
+    <meta name="robots" content="noindex">
+  </head>
+
+
+ <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+
+    <!-- ここより下に書いてください -->
+
+    <br /><br />
+    <h1>404 Not Found</h1>
+    <br />
+    <p id="error-message">Page Not Found</p>
+    <br />
+    <p><a id="home-link" href="#">Go to Homepage</a></p>
+
+
+    <!-- ここより上に書いてください -->
+
+    <br /><br />
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+    <script>
+      function writeLangText() {
+            // 現在のURLを取得
+            const currentUrl = window.location.pathname;
+            // URLから言語コードを取得
+            const lang = currentUrl.split('/')[1];
+
+            // 各言語のメッセージを設定
+            const messages = {
+                en: {
+                    error: "The page you are looking for could not be found.",
+                    home: "Go to English Homepage"
+                },
+                ja: {
+                    error: "お探しのページは見つかりませんでした",
+                    home: "日本語トップページに戻る"
+                },
+                zh: {
+                    error: "您查找的页面未找到",
+                    home: "返回中文主页"
+                }
+            };
+
+            // デフォルトは英語
+            const message = messages[lang] || messages['en'];
+
+            // メッセージを表示
+            document.getElementById('error-message').textContent = message.error;
+            const homeLink = document.getElementById('home-link');
+            homeLink.textContent = message.home;
+            homeLink.href = `/${lang}/index.html`;
+      }
+       window.onload = writeLangText() 
+    </script>
+  </body>
+</html>

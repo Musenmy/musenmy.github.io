@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- GoogleTag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>ゼンゼロ評価基準 - Relicer</title>
+    <meta name="description" content="Relicerでのゼンゼロの評価基準および計算式を記載しています" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+
+    <!-- ここより下に書いてください -->
+
+    <br /><br />
+    <h1>ゼンゼロ評価基準</h1>
+    <br />
+    <p class="center">Relicerでのゼンゼロのスコアリングについて解説しています</p>
+    <br /><br />
+
+    <div class="center" id="evals">
+      <h2>スコア評価基準</h2>
+      <p>原神・スタレと異なりメインステ補正はかかっていません。後日改善します</p>	
+      <p>厳選が易化したならスコア基準引き上げても…()</p>
+      <br /><br />
+      <table border="1" align="center" cellpadding="30">
+        <tr>
+          <th>評価</th>
+          <th>単体スコア</th>
+          <th>総合スコア</th>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>14.4 未満</td>
+          <td>86.4 未満</td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td>14.4 ～ 24.0</td>
+          <td>86.4 ～ 144.0</td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>24.0 ～ 28.8</td> 
+          <td>144.0 ～ 172.8</td>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td>28.8 ～ 31.8</td>
+          <td>172.8 ～ 190.8</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>31.8 ～ 32.3</td>
+          <td>190.8 ～ 193.8</td>
+        </tr>
+        <tr>
+          <td>S+</td>
+          <td>32.3 ～ 33.6</td>
+          <td>193.8 ～ 201.6</td>
+        </tr>
+        <tr>
+          <td>SS</td>
+          <td>33.6 ～ 35.3</td>
+          <td>201.6 ～ 211.8</td>
+        </tr>
+        <tr>
+          <td>SS+</td>
+          <td>35.3 ～ 36.6</td>
+          <td>211.8 ～ 219.6</td>
+        </tr>
+        <tr>
+          <td>SSS</td>
+          <td>36.6 ～ 37.8</td>
+          <td>219.6 ～ 226.8</td>
+        </tr>
+        <tr>
+          <td>SSS+</td>
+          <td>37.8</td>
+          <td>226.8</td>
+        </tr>
+      </table>
+    </div>
+    <br /><br />
+    <div class="center" id="funcs">
+      <h2>スコア計算基準</h2>
+      <br /><br />
+      <table border="1" align="center" cellpadding="30">
+        <tr>
+          <th>計算基準</th>
+          <th>式</th>
+        </tr>
+        <tr>
+          <td>攻撃</td>
+          <td>ATK% + ATK/9 + CR×2 + CD</td>
+        </tr>
+        <tr>
+          <td>その他</td>
+          <td>実装をお待ちください</td>
+        </tr>
+      </table>
+    </div>
+
+    <br /><br />
+
+    <!-- ここより上に書いてください -->
+
+    <br /><br />
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>

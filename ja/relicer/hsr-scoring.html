@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- GoogleTag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>スタレ評価基準 - Relicer</title>
+    <meta
+      name="description"
+      content="Relicerでの崩壊：スターレイルの評価基準および計算式を記載しています"
+    />
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+
+    <!-- ここより下に書いてください -->
+
+    <br /><br />
+    <h1>スターレイル評価基準</h1>
+    <br />
+    <p class="center">Relicerでの崩壊：スターレイルのスコアリングについて解説しています</p>
+    <br /><br />
+
+    <div class="center" id="evals">
+      <h2>スコア評価基準</h2>
+      <p>
+        メインステ補正（後日別記事に記載予定）を含んだ値を評価しています。原神時代の仕様を継いで他サービスよりかなり厳しめに設定してあります
+      </p>
+      <br /><br />
+      <table border="1" align="center" cellpadding="30">
+        <tr>
+          <th>評価</th>
+          <th>単体スコア</th>
+          <th>総合スコア</th>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>17 未満</td>
+          <td>102 未満</td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td>17 ～ 23</td>
+          <td>102 ～ 138</td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>23 ～ 29</td>
+          <td>138 ～ 174</td>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td>29 ～ 36</td>
+          <td>174 ～ 216</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>36 ～ 38.5</td>
+          <td>216 ～ 231</td>
+        </tr>
+        <tr>
+          <td>S+</td>
+          <td>38.5 ～ 41</td>
+          <td>231 ～ 246</td>
+        </tr>
+        <tr>
+          <td>SS</td>
+          <td>41 ～ 43.5</td>
+          <td>246 ～ 261</td>
+        </tr>
+        <tr>
+          <td>SS+</td>
+          <td>43.5 ～ 46</td>
+          <td>261 ～ 276</td>
+        </tr>
+        <tr>
+          <td>SSS</td>
+          <td>46 ～ 49</td>
+          <td>276 ～ 294</td>
+        </tr>
+        <tr>
+          <td>SSS+</td>
+          <td>49 ～ 52</td>
+          <td>294 ～ 312</td>
+        </tr>
+      </table>
+    </div>
+    <br /><br />
+    <div class="center" id="funcs">
+      <h2>スコア計算基準</h2>
+      <p>ヒーラーやサポーターでも活かせるように会心を含まない基準も設定されています</p>
+      <p>
+        上3つの基準（攻撃/HP/防御）をもとに全ての計算基準で理論値が等しくなるように調整されています<br />
+        これにより基準をまたいでも評価の比較ができます
+      </p>
+      <br /><br />
+      <table border="1" align="center" cellpadding="30">
+        <tr>
+          <th>計算基準</th>
+          <th>式</th>
+        </tr>
+        <tr>
+          <td>HP<br />刃などにおすすめ</td>
+          <td>HP% + HP/18 + CR×2 + CD</td>
+        </tr>
+        <tr>
+          <td>攻撃<br />だいたいの普通のアタッカーにおすすめ</td>
+          <td>ATK% + ATK/9 + CR×2 + CD</td>
+        </tr>
+        <tr>
+          <td>防御<br />アベンチュリンにおすすめ（の予定）</td>
+          <td>DEF%×0.8 + DEF/9 + CR×2 + CD</td>
+        </tr>
+        <tr>
+          <td>HPのみ<br />白露などにおすすめ</td>
+          <td>HP%×1.596 + HP/11.278</td>
+        </tr>
+        <tr>
+          <td>攻撃のみ<br />羅刹などにおすすめ</td>
+          <td>ATK%×1.596 + ATK/5.639</td>
+        </tr>
+        <tr>
+          <td>防御のみ<br />ジェパなどにおすすめ</td>
+          <td>DEF%×1.277 + DEF/5.639</td>
+        </tr>
+        <tr>
+          <td>効果命中<br />カフカなどにおすすめ</td>
+          <td>EHR×1.6 + ATK%×1.3 + ATK/6.92</td>
+        </tr>
+        <tr>
+          <td>撃破特効<br />ブートヒルなどにおすすめ</td>
+          <td>BE×1.004 + CR×2.008 + CD×1.004</td>
+        </tr>
+        <tr>
+          <td>撃破特効のみ<br />ルアン？</td>
+          <td>BE×1.291</td>
+        </tr>
+        <tr>
+          <td>会心ダメージのみ<br />ブローニャや花火におすすめ</td>
+          <td>CD×1.291</td>
+        </tr>
+        <tr>
+          <td>会心のみ<br />鏡流におすすめ</td>
+          <td>CR×2.2 + CD×1.1</td>
+        </tr>
+      </table>
+    </div>
+
+    <br /><br />
+
+    <!-- ここより上に書いてください -->
+
+    <br /><br />
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>
