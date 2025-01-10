@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <!--ページ説明系-->
+    <meta property="og:site_name" content="Musenmy" />
+    <title>進法変換 - Musenmy Webtools</title>
+    <meta property="og:title" content="進法変換 - Musenmy Webtools" />
+    <meta name="description" content="進法変換と色のプレビューができます" />
+    <meta property="og:description" content="進法変換と色のプレビューができます" />
+    <!--Google Web解析-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+    <style>
+      .S {
+        margin-left: 5%;
+        margin-bottom: 15px;
+      }
+      .S label {
+        margin-right: 10px;
+      }
+      input {
+        border: 1px solid black;
+        position: absolute;
+        left: 150px;
+        min-width: 200px;
+      }
+      #c {
+        margin-left: 5%;
+        margin-top: 20px;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+    <h1>進法変換</h1>
+    <p>入力した値を他の進数に変換します。色と解釈できる値はプレビューされます (hex 3/6/8桁)</p>
+    <br />
+    <div class="S">16進数 <input id="h" /></div>
+    <div class="S">10進数 <input id="d" /></div>
+    <div class="S">8進数 <input id="o" /></div>
+    <div class="S">2進数 <input id="b" /></div>
+    <div class="S">
+      <select id="s">
+        <script>
+          for (let k = 3; k <= 36; k++) document.write(`<option value="${k}">${k}進数</option>`);
+        </script>
+      </select>
+      <input type="text" id="m" />
+    </div>
+    <div id="c"></div>
+    <script>
+      L = (e, t, f) => e.addEventListener(t, f);
+      i = "input";
+      function u(x, y) {
+        v = parseInt(x, y);
+        if (isNaN(v)) {
+          h.value = "";
+          d.value = "";
+          o.value = "";
+          b.value = "";
+          m.value = "";
+          c.style.backgroundColor = "transparent";
+          return;
+        }
+        h.value = v.toString(16).toUpperCase();
+        d.value = v.toString();
+        o.value = v.toString(8);
+        b.value = v.toString(2);
+        m.value = v.toString(s.value).toUpperCase();
+        if (/^[0-9A-F]{3}$|^[0-9A-F]{6}$|^[0-9A-F]{8}$/i.test(h.value)) {
+          c.style.backgroundColor = `#${h.value}`;
+        } else {
+          c.style.backgroundColor = "transparent";
+        }
+      }
+      L(h, i, () => u(h.value, 16));
+      L(d, i, () => u(d.value, 10));
+      L(o, i, () => u(o.value, 8));
+      L(b, i, () => u(b.value, 2));
+      L(m, i, () => u(m.value, s.value));
+      L(s, "change", () => u(d.value, 10));
+    </script>
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>

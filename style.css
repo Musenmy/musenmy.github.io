@@ -117,21 +117,12 @@ input[type="button"]:disabled {
   }
 }
 
-header {
-  padding: 0px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: transparent;
-  display: flex;
-  background-color: gainsboro;
-}
 footer {
   border-top: 10px solid var(--pColor);
   width: 100%;
-  height: 150px;
-  margin: 50px 0 0;
-  padding: 20px 0 0;
+  height: 100px;
+  margin-top: 50px;
+  padding-top: 1em;
 }
 p {
   font-size: 16px;

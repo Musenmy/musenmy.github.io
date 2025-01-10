@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <!--ページ説明系-->
+    <meta property="og:site_name" content="Musenmy" />
+    <title>画像リサイズ Beta - Musenmy Webtools</title>
+    <meta property="og:title" content="画像リサイズ Beta - Musenmy Webtools" />
+    <meta name="description" content="画像の比率変更やリサイズができます" />
+    <meta property="og:description" content="画像の比率変更やリサイズができます" />
+    <!--Google Web解析-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      input, button {
+         border: 1px solid black;
+         padding: 5px 3px;
+      }
+      #allContainer {
+         margin: 5%;
+      }
+      #canvas-container {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+    <h1>画像リサイズ Beta</h1>
+    <p>挙動が不安定かもしれません</p>
+    <div id="allContainer">
+      <input type="file" id="upload-button" accept="image/*" />
+      <br />
+      <span id="image-info">画像をアップロードしてください</span>
+      <br /><br />
+      <div>
+        <p>
+          どちらかを指定してください<br />
+          倍率指定:
+          <input type="number" id="percent-input" placeholder="100" /> %
+          <br />
+          絶対指定 幅:
+          <input type="number" id="width-input" placeholder="" /> px 高さ:
+          <input type="number" id="height-input" placeholder="" /> px
+        </p>
+      </div>
+      <br />
+      <button id="resize-button" disabled>リサイズ</button>
+      <button id="download-button" disabled>ダウンロード</button>
+
+      <div id="canvas-container">
+        <canvas id="image-canvas"></canvas>
+      </div>
+    </div>
+
+    <script>
+      const uploadButton = document.getElementById("upload-button");
+      const imageInfo = document.getElementById("image-info");
+      const canvas = document.getElementById("image-canvas");
+      const ctx = canvas.getContext("2d");
+      const percentInput = document.getElementById("percent-input");
+      const widthInput = document.getElementById("width-input");
+      const heightInput = document.getElementById("height-input");
+      const resizeButton = document.getElementById("resize-button");
+      const downloadButton = document.getElementById("download-button");
+
+      let originalImage = null;
+      let originalWidth = 0;
+      let originalHeight = 0;
+
+      uploadButton.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const img = new Image();
+            img.onload = () => {
+              originalImage = img;
+              originalWidth = img.width;
+              originalHeight = img.height;
+
+              canvas.width = originalWidth;
+              canvas.height = originalHeight;
+              ctx.drawImage(img, 0, 0);
+
+              imageInfo.textContent = `${originalWidth}x${originalHeight}`;
+              downloadButton.disabled = false;
+              resizeButton.disabled = false;
+            };
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      resizeButton.addEventListener("click", () => {
+        const percent = parseFloat(percentInput.value);
+        const width = parseInt(widthInput.value, 10);
+        const height = parseInt(heightInput.value, 10);
+
+        if ((percent && (width || height)) || (!percent && !width && !height)) {
+          alert("ピクセルまたはパーセントのどちらか一方を指定してください。");
+          return;
+        }
+
+        let newWidth = originalWidth;
+        let newHeight = originalHeight;
+
+        if (percent) {
+          newWidth = Math.round(originalWidth * (percent / 100));
+          newHeight = Math.round(originalHeight * (percent / 100));
+        } else if (width && height) {
+          newWidth = width;
+          newHeight = height;
+        } else if (width) {
+          newWidth = width;
+          newHeight = Math.round((width / originalWidth) * originalHeight);
+        } else if (height) {
+          newHeight = height;
+          newWidth = Math.round((height / originalHeight) * originalWidth);
+        }
+
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        ctx.drawImage(originalImage, 0, 0, newWidth, newHeight);
+
+        imageInfo.textContent = `${newWidth}x${newHeight}`;
+      });
+
+      downloadButton.addEventListener("click", () => {
+        const link = document.createElement("a");
+        link.download = "resized-image.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    </script>
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>
