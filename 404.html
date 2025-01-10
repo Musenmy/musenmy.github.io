@@ -58,7 +58,7 @@
             // 各言語のメッセージを設定
             const messages = {
                 en: {
-                    error: "The page you are looking for could not be found.",
+                    error: "The page you are looking for could not be found.<br>English version of the page may not be created yet. In such case, please view Japanese page with translator.",
                     home: "Go to English Homepage"
                 },
                 ja: {
@@ -66,7 +66,7 @@
                     home: "日本語トップページに戻る"
                 },
                 zh: {
-                    error: "您查找的页面未找到",
+                    error: "您查找的页面未找到。<br>可能尚未创建该页面的中文版本。在这种情况下，请使用翻译器和查日语页面。<br><br>本网站未包含中文字体，因此可能会出现显示问题。不便之处，敬请谅解。",
                     home: "返回中文主页"
                 }
             };
@@ -75,9 +75,9 @@
             const message = messages[lang] || messages['en'];
 
             // メッセージを表示
-            document.getElementById('error-message').textContent = message.error;
+            document.getElementById('error-message').innerHTML = message.error;
             const homeLink = document.getElementById('home-link');
-            homeLink.textContent = message.home;
+            homeLink.innerHTML = message.home;
             homeLink.href = `/${lang}/index.html`;
       }
        window.onload = writeLangText() 

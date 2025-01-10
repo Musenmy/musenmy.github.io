@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+    <meta charset="utf-8" />
+    <meta name="google-site-verification" content="NuF6riIoRXpsvCDCXbQKRadrIbF6mi1v-O0dBFuLDV8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Relicerの紹介 - Musenmy</title>
+    <meta name="description" content="Relicerの紹介（日本語）" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+    <br /><br />
+    <h1>Relicerの紹介</h1>
+    <br />
+    <br />
+    <div class="doFlex">
+      <div class="flex1" id="about-relicer">
+        <h2>Relicerについて</h2>
+        <br />
+        <p>
+          Relicer（れりさー）は、原神・崩壊スターレイル・ゼンレスゾーンゼロに関するさまざまなツールを提供するBotです。<br />
+          UIDから情報を取得する遺物スコアリング、螺旋や庭の進捗確認、遺物の強化コスト計算、樹脂や開拓力の回復時間計算ができます。<br />
+          遺物のスコアに関してはなるべく実際の使用感に近くなるように日々改良がされています！<br /><br />
+          界隈初のスターレイル対応 (2023-05-23)<br />
+          ゼンゼロは暫定対応です。APIが出たらUIDからのデータ取得ができるようになります
+        </p>
+        <br />
+        <p>
+          <input type="button" onclick="openUrl(`use`)" value="各コマンドの使い方" />
+        </p>
+        <br />
+      </div>
+      <div class="flex2" id="relicer-update">
+        <h2>アップデート</h2>
+        <br />
+        <p class="center">
+          おしらせ<br />
+          来年3月までは浮上頻度が少なくなるのでゲーム側のアプデの対応のみを行います<br />
+          作業が遅れる可能性があります
+        </p>
+        <br />
+      </div>
+    </div>
+    <div class="doFlex">
+      <div class="flex1" id="relicer-invite">
+        <h2>Relicerを導入する</h2>
+        <br />
+        <p>
+          自分が所有している、またはサーバー管理権限を持っているサーバーにのみ導入できます。<br />
+          サーバーがない場合はまずDiscordアプリ内で作成してください。
+        </p>
+        <div class="agreeTerms">
+          <form>
+            <p>
+              <input type="checkbox" id="consent-chk" name="consent-chk" />
+              <label for="consent-chk"
+                ><a href="/ja/terms.html">Relicer利用規約</a>に同意する</label
+              >
+            </p>
+            <p>
+              <input
+                type="button"
+                id="invite-bot"
+                onclick="openUrlNewTab(`bot`)"
+                value="Botの招待はこちら"
+                disabled
+              />
+            </p>
+          </form>
+        </div>
+        <br />
+      </div>
+      <div class="flex2" id="discord-invite">
+        <h2>Relicer公式Discord</h2>
+        <br />
+        <p>Relicer Community: HoYoゲームを主に扱うサポートサーバー兼コミュニティ</p>
+        <p>
+          Relicerの更新情報・サポートのチャンネル、原神・スターレイル・ゼンレスゾーンゼロのチャンネル、その他話題の雑談チャンネルがあります～
+        </p>
+        <br />
+        <p>
+          <input type="button" onclick="openUrlNewTab(`com`)" value="Discordサーバーに参加する" />
+        </p>
+      </div>
+    </div>
+
+    <br /><br />
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+    <script>
+      function openUrlNewTab(typ) {
+        let urls = {
+          bot: "https://discord.com/api/oauth2/authorize?client_id=1073165731182673990&permissions=414464731200&scope=guilds.join%20bot%20applications.commands&response_type=code",
+          com: "https://discord.com/invite/juJAFbvnta",
+        };
+        let url = urls[typ] || "#";
+        window.open(url, "_blank");
+      }
+      function openUrl(typ) {
+        let urls = {
+          use: "/ja/relicer/instructions.html",
+        };
+        let url = urls[typ] || "#";
+        window.open(url);
+      }
+
+      const consent_chk = document.querySelector(`#consent-chk`);
+      const submit_btn = document.querySelector(`#invite-bot`);
+
+      consent_chk.addEventListener("change", () => {
+        submit_btn.disabled = !consent_chk.checked;
+      });
+      window.addEventListener("pageshow", function (event) {
+        if (event.persisted) {
+          consent_chk.checked = false;
+          submit_btn.disabled = true;
+        }
+      });
+    </script>
+  </body>
+</html>
