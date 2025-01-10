@@ -2,8 +2,14 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
+    <meta property="og:title" content="Dev Teamへのお問い合わせ" />
+    <meta property="og:site_name" content="Musenmy" />
+    <meta
+      property="og:description"
+      content="中の人へのお問い合わせ（日本語）"
+    />
     <title>お問い合わせ - Relicer</title>
-    <meta name="description" content="中の人へのお問い合わせ（日本語）">
+    <meta name="description" content="中の人へのお問い合わせ（日本語）" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -12,17 +18,18 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3SWSM9QNQJ');
-</script>
- <body>
+    gtag("config", "G-3SWSM9QNQJ");
+  </script>
+  <body>
     <div id="header">
       <!-- ここにheader.htmlが読み込まれる -->
     </div>
@@ -36,9 +43,7 @@
     <br /><br />
     <h1>お問い合わせ</h1>
     <br />
-    <p class="center">
-      お問い合わせや中の人に対する依頼はこちらで受け付けております。
-    </p>
+    <p class="center">お問い合わせや中の人に対する依頼はこちらで受け付けております。</p>
     <br /><br />
 
     <div class="doFlex">

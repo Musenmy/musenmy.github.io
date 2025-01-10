@@ -21,14 +21,19 @@
   .HEADER_ColorTagZZZ .HEADER_number {
     border-color: orange;
   }
-  .HEADER_container:hover {
+  .HEADER_container:not(.HEADER_lang):hover {
     filter: invert(1);
   }
-  .HEADER_container:active {
+  .HEADER_container:not(.HEADER_lang):active {
     filter: invert(1);
+  }
+  select#HEADER_langSelect {
+    width: 100%;
+    height: 100%;
+    text-align: center;
   }
 
-  @media (width < 768px) {
+  @media (width < 960px) {
     .HEADER_menu {
       background-color: #bbbbbbbb;
       position: fixed;
@@ -52,6 +57,9 @@
       display: flex;
       color: inherit;
       text-decoration: none;
+    }
+    .HEADER_lang {
+      height: 2em;
     }
     .HEADER_number {
       width: 25%;
@@ -114,7 +122,7 @@
     }
   }
 
-  @media (768px <= width) {
+  @media (960px <= width) {
     div.HEADER_menu-btn {
       display: none;
     }
@@ -142,6 +150,11 @@
       height: 3.6em;
       border-left-width: 0.6em;
       border-left-style: solid;
+    }
+    .HEADER_lang {
+      height: 2em;
+      border-left: none;
+      margin: auto 1em auto auto;
     }
     .HEADER_number {
       display: none;
@@ -200,6 +213,14 @@
       <span class="HEADER_lower">ギガ死でも使える！<br />(効果には個人差があります)</span>
     </div>
   </a>
+
+  <a class="HEADER_container HEADER_lang">
+    <select id="HEADER_langSelect">
+      <option value="ja">日本語 (JA)</option>
+      <option value="en">English (EN)</option>
+      <option value="zh">中文 (ZH)</option>
+    </select>
+  </a>
 </div>
 
 <script>
@@ -208,5 +229,17 @@
   menuBtn.addEventListener("click", function () {
     menu.classList.toggle("open");
     menuBtn.classList.toggle("open");
+  });
+
+  const languageSelector = document.getElementById("HEADER_langSelect");
+  const currentUrl = window.location.href;
+  const urlParts = currentUrl.split("/");
+  const currentLang = urlParts[3] || "ja";
+  languageSelector.value = currentLang;
+  languageSelector.addEventListener("change", (event) => {
+    const selectedLang = event.target.value;
+    urlParts[3] = selectedLang;
+    const newUrl = urlParts.join("/");
+    window.location.href = newUrl;
   });
 </script>
