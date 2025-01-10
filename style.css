@@ -36,20 +36,27 @@ dark mode
     padding: 0 0 0 0%;
   }
 }
-/* フォントファイルを定義する */
 @font-face {
-  font-family: 'Frutiger'; /* フォントファミリー名（任意） */
+  font-family: 'Frutiger';
   src: url('/fonts/Frutiger.ttf');
-  font-weight: normal; /* 通常の太さ */
-  font-style: normal;  /* 通常のスタイル */
+  font-weight: normal;
+  font-style: normal;
 }
+@font-face {
+  font-family: 'Noto';
+  src: url('/fonts/NotoSans.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   transition: 0.75s;
   background-color: var(--bgColor);
-  font-family: "Frutiger", sans-serif;
+  font-family: "Frutiger", "Noto", sans-serif;
+  line-height: 1.25em;
 }
 
 #message {
