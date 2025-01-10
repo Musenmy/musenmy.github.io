@@ -88,11 +88,11 @@
         o.value = v.toString(8);
         b.value = v.toString(2);
         m.value = v.toString(s.value).toUpperCase();
-        if (/^[0-9A-F]{3}$|^[0-9A-F]{6}$|^[0-9A-F]{8}$/i.test(h.value)) {
+        //if (/^[0-9A-F]{3}$|^[0-9A-F]{6}$|^[0-9A-F]{8}$/i.test(h.value)) {
           c.style.backgroundColor = `#${h.value}`;
-        } else {
-          c.style.backgroundColor = "transparent";
-        }
+        //} else {
+        //  c.style.backgroundColor = "transparent";
+        // }
       }
       L(h, i, () => u(h.value, 16));
       L(d, i, () => u(d.value, 10));
