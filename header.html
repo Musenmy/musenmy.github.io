@@ -1,18 +1,12 @@
 <style>
   [class^="HEADER"] {
-    font-family: "Frutiger", sans-serif;
     box-sizing: border-box;
     transition: 0.25s;
     font-size: 105%;
   }
 
-  .HEADER_smaller {
-    font-size: 75%;
-    vertical-align: bottom;
-  }
-
-  .HEADER_ColorTagName1,
-  .HEADER_ColorTagName1 .HEADER_number {
+  .HEADER_ColorTagDefault,
+  .HEADER_ColorTagDefault .HEADER_number {
     border-color: green;
   }
   .HEADER_ColorTagGI,
@@ -30,7 +24,6 @@
   .HEADER_container:hover {
     filter: invert(1);
   }
-
   .HEADER_container:active {
     filter: invert(1);
   }
@@ -47,11 +40,9 @@
       transition: 0.6s ease;
       z-index: 1;
     }
-
     .HEADER_menu.open {
       right: 0;
     }
-
     .HEADER_container {
       background-color: white;
       border: 1.5px solid black;
@@ -62,7 +53,6 @@
       color: inherit;
       text-decoration: none;
     }
-
     .HEADER_number {
       width: 25%;
       margin-top: 0.2em;
@@ -73,26 +63,21 @@
       font-size: 300%;
       border-right: 0.2em solid;
     }
-
     .HEADER_content {
       flex-grow: 1;
       display: flex;
       flex-direction: column;
       padding-left: 5%;
     }
-
     .HEADER_upper {
       display: flex;
       font-size: 140%;
-      margin-top: 0.4em;
+      margin-top: 0.3em;
     }
-
     .HEADER_lower {
       display: flex;
       font-size: 80%;
     }
-
-    /* ハンバーガーボタンのスタイル */
     .HEADER_menu-btn {
       position: fixed;
       top: 20px;
@@ -134,14 +119,14 @@
       display: none;
     }
     div.HEADER_menu {
-      position: fixed; /* ページをスクロールしても上部に固定 */
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100vw; /* 横幅を画面幅いっぱいに */
+      width: 100vw;
       height: 4.5em;
-      display: flex; /* 横方向に配置 */
+      display: flex;
       border-bottom: 1px solid black;
-      z-index: 9999;
+      z-index: 99;
       padding-left: 1vw;
     }
 
@@ -158,22 +143,14 @@
       border-left-width: 0.6em;
       border-left-style: solid;
     }
-
     .HEADER_number {
       display: none;
     }
-
     .HEADER_upper {
       display: flex;
       font-weight: bold;
       font-size: 100%;
     }
-
-    .HEADER_upper .HEADER_smaller {
-      font-size: 60%;
-      margin-top: 0.6vw;
-    }
-
     .HEADER_lower {
       display: flex;
       font-size: 80%;
@@ -187,31 +164,31 @@
   <span></span>
 </div>
 <div class="HEADER_menu" id="HEADER_menu">
-  <a href="/ja/index.html" class="HEADER_container HEADER_ColorTagName1">
+  <a href="/ja/index.html" class="HEADER_container HEADER_ColorTagDefault">
     <span class="HEADER_number"></span>
     <div class="HEADER_content">
-      <span class="HEADER_upper">TOP&ensp;<span class="HEADER_smaller"></span></span>
+      <span class="HEADER_upper">TOP</span>
       <span class="HEADER_lower">Musenmy</span>
     </div>
   </a>
   <a href="/ja/relicer/instructions.html" class="HEADER_container HEADER_ColorTagGI">
     <span class="HEADER_number"></span>
     <div class="HEADER_content">
-      <span class="HEADER_upper">Relicer&ensp;<span class="HEADER_smaller"></span></span>
+      <span class="HEADER_upper">Relicer</span>
       <span class="HEADER_lower">HoYo厳選勢向けの<br />Discord Bot</span>
     </div>
   </a>
   <a href="/ja/ttsbot/introduction.html" class="HEADER_container HEADER_ColorTagHSR">
     <span class="HEADER_number"></span>
     <div class="HEADER_content">
-      <span class="HEADER_upper">Reader&ensp;<span class="HEADER_smaller"></span></span>
+      <span class="HEADER_upper">Reader</span>
       <span class="HEADER_lower">新Discord Bot<br />計画中…</span>
     </div>
   </a>
   <a href="/ja/other-products/list.html" class="HEADER_container HEADER_ColorTagHSR">
     <span class="HEADER_number"></span>
     <div class="HEADER_content">
-      <span class="HEADER_upper">Other Bots&ensp;<span class="HEADER_smaller"></span></span>
+      <span class="HEADER_upper">Other Bots</span>
       <span class="HEADER_lower">限定公開や廃止済の<br />サービスを見る</span>
     </div>
   </a>
@@ -219,18 +196,15 @@
   <a href="/ja/webapp/list.html" class="HEADER_container HEADER_ColorTagZZZ">
     <span class="HEADER_number"></span>
     <div class="HEADER_content">
-      <span class="HEADER_upper">Web App&ensp;<span class="HEADER_smaller"></span></span>
-      <span class="HEADER_lower">軽さを売りに! </span>
+      <span class="HEADER_upper">Web Apps</span>
+      <span class="HEADER_lower">ギガ死でも使える！<br />(効果には個人差があります)</span>
     </div>
   </a>
 </div>
 
 <script>
-  // ハンバーガーボタンとメニューのDOM取得
   const menuBtn = document.getElementById("HEADER_menu-btn");
   const menu = document.getElementById("HEADER_menu");
-
-  // メニューボタンのクリックイベント
   menuBtn.addEventListener("click", function () {
     menu.classList.toggle("open");
     menuBtn.classList.toggle("open");

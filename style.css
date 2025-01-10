@@ -56,7 +56,7 @@ dark mode
   transition: 0.75s;
   background-color: var(--bgColor);
   font-family: "Frutiger", "Noto", sans-serif;
-  line-height: 1.25em;
+  line-height: 1.3em;
 }
 
 #message {
