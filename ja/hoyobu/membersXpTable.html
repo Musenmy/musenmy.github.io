@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <!--ページ説明系-->
+    <meta property="og:site_name" content="Musenmy" />
+    <title>ほよ部XPテーブル - Musenmy</title>
+    <meta property="og:title" content="ほよ部XPテーブル - Musenmy" />
+    <meta name="description" content="原神HoYoLAB部のメッセージレべル一覧" />
+    <meta property="og:description" content="原神HoYoLAB部のメッセージレべル一覧" />
+    <!--Google Web解析-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+    <style>
+      @font-face {
+        font-family: "Futura";
+        src: url("/fonts/FuturaL-Italic.ttf");
+      }
+      *:not(html):not(body):not(#header):not(#header *):not(#footer):not(#footer *) {
+        font-family: "Futura", sans-serif;
+        font-style: italic;
+      }
+      h1 {
+        text-align: center;
+      }  
+      table {
+        min-width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        color: unset;
+        background-color: #f4f4f4;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9 !important;
+      }
+      td:nth-child(1),
+      td:nth-child(3) {
+        text-align: right;
+      }
+      tr:hover {
+        background-color: #f1f1f1 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+
+    <h1>Koshihikari XP Table</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Pos.</th>
+          <th>User</th>
+          <th>Level</th>
+        </tr>
+      </thead>
+      <tbody id="tableRows"></tbody>
+    </table>
+    <script>
+      const xpTable = [
+        3, 5, 7, 10, 13, 16, 20, 24, 28, 33, 38, 43, 48, 54, 60, 66, 73, 80, 87, 95, 103, 111, 119,
+        128, 137, 146, 156, 166, 176, 187, 198, 209, 220, 232, 244, 256, 269, 282, 295, 309, 323,
+        337, 351, 366, 381, 396, 412, 428, 444, 461, 478, 495, 512, 530, 548, 566, 585, 604, 623,
+        643, 663, 683, 703, 724, 745, 766, 788, 810, 832, 855, 878, 901, 924, 948, 972, 996, 1021,
+        1046, 1071, 1097, 1123, 1149, 1175, 1202, 1229, 1256, 1284, 1312, 1340, 1369, 1398, 1427,
+        1456, 1486, 1516, 1546, 1577, 1608, 1639, 1671,
+      ];
+
+      fetch("https://koshihikari.glitch.me/getxp")
+        .then((response) => response.json())
+        .then((data) => {
+          function padXp(value) {
+            let strValue = String(value);
+            let lack = 4 - strValue.length;
+            strValue = "&ensp;".repeat(lack) + strValue;
+            return strValue;
+          }
+          const users = Object.values(data);
+          users.sort((a, b) => b.level - a.level || b.xp - a.xp);
+          let tableRows = users
+            .map(
+              (user, i) => `
+      <tr>
+        <td>${i + 1}</td>
+        <td>${user.userName}</td>
+        <td>${user.level} (${padXp(user.xp)}/${padXp(xpTable[user.level])})</td>
+      </tr>`
+            )
+            .join("");
+          document.getElementById("tableRows").innerHTML = tableRows;
+        });
+    </script>
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>
