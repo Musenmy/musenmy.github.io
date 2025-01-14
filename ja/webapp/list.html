@@ -32,28 +32,67 @@
       });
     </script>
     <h1>Musenmy Webtools</h1>
-    <br />
-    <br />
     <div class="doFlex">
       <div class="flex1" id="about-relicer">
-        <h2>ようこそ</h2>
+        <h2>Webtoolsにようこそ</h2>
         <br />
-        <p>現在Webサイトリニューアル中です。リンクがつながらなくなったりする可能性があります。</p>
-        <br />
+        <p>これは本サイト上で公開されている簡単なツールの一覧ページです</p>
         <p>
-          <input type="button" onclick="openUrl(`use`)" value="各コマンドの使い方" />
+          ここにないもので「これはまだなくて需要ありそう」「他所のツールが使いにくいのでこれの改良版が欲しい！」などがあったら、
+          Discordで言ってくれればいつか作るかも
         </p>
-        <br />
       </div>
       <div class="flex2" id="relicer-update">
-        <h2>h2</h2>
+        <h2>本サイトのリンクについて</h2>
         <br />
-        <h3>h3</h3>
-        <p>工事中…</p>
-        <br />
+        <p>
+          このページまたは各ツールに自由にリンクしてください。ページのURLが変わった場合はここでお知らせします。
+        </p>
       </div>
     </div>
-
+    <div class="doFlex">
+      <div class="flex1" id="about-relicer">
+        <h2>進法変換ツール</h2>
+        <br />
+        <p>
+          2, 8, 10, 16, (3～36の任意の値) 進法の相互変換ができます。入力はすぐに反映されます。<br />
+          カラーコードとして解釈できる値のプレビューもできます。
+        </p>
+        <br />
+        <a class="button" href="/ja/webapp/baseConverter.html">進法変換ツール</a>
+      </div>
+      <div class="flex2" id="relicer-update">
+        <h2>文字数カウンター</h2>
+        <br />
+        <p>
+          オーソドックスな文字数カウンターですが、軽量化を目指しました。ページはメタタグ等を含めても1MBぐらいです
+          (うち8割がフォントですが、なくすとページの統一性がなくなるので残しました) 。<br />
+          文字数、空白除く文字数、行数、UTF-8サイズを数えられます。
+        </p>
+        <p><s>世の広告付きサイトは20MBとかあって重いので自作したのがはじまりです</s></p>
+        <br />
+        <a class="button" href="/ja/webapp/textCounter.html">文字数カウンター</a>
+      </div>
+    </div>
+    <div class="doFlex">
+      <div class="flex1" id="about-relicer">
+        <h2>画像リサイザー</h2>
+        <br />
+        <p>
+          絶対指定でも割合指定でもリサイズができます。ピクセルを両辺で指定すれば歪ませることもできます。<br />
+          Windowsなら標準対応でもスマホだと意外とめんどくさいので作った。<br />
+          HTML5/JSが画像として認識してくれるものなら形式はなんでも受け付けます
+          (作られるファイルはpngになります) 。
+        </p>
+        <br />
+        <a class="button" href="/ja/webapp/imageResizer.html">画像リサイズ Beta</a>
+      </div>
+      <div class="flex2" id="relicer-update">
+        <h2>Coming Soon...</h2>
+        <br />
+        <p>欲しいと思ったものを追加していきます</p>
+      </div>
+    </div>
     <br /><br />
 
     <div id="footer"></div>

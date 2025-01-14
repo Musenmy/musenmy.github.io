@@ -24,18 +24,17 @@
       gtag("config", "G-3SWSM9QNQJ");
     </script>
     <style>
-      body {
-        font-family: sans-serif;
-      }
-      input, button {
-         border: 1px solid black;
-         padding: 5px 3px;
-      }
-      #allContainer {
-         margin: 5%;
+      input:not(#upload-button),
+      button {
+        border: 1px solid black;
+        padding: 5px 3px;
       }
       #canvas-container {
         margin-top: 20px;
+      }
+      hr {
+        height: 2px;
+        background-color: black;
       }
     </style>
   </head>
@@ -47,27 +46,28 @@
       });
     </script>
     <h1>画像リサイズ Beta</h1>
-    <p>挙動が不安定かもしれません</p>
-    <div id="allContainer">
-      <input type="file" id="upload-button" accept="image/*" />
+    <div class="globalContainer">
+      <p>開発中の暫定公開版です。挙動が不安定かもしれません</p>
       <br />
-      <span id="image-info">画像をアップロードしてください</span>
+      <input type="file" id="upload-button" accept="image/*" />
       <br /><br />
+      <hr />
+      <br />
       <div>
-        <p>
-          どちらかを指定してください<br />
-          倍率指定:
-          <input type="number" id="percent-input" placeholder="100" /> %
-          <br />
-          絶対指定 幅:
-          <input type="number" id="width-input" placeholder="" /> px 高さ:
-          <input type="number" id="height-input" placeholder="" /> px
-        </p>
+        現在の解像度: <span id="image-info">画像未選択</span><br /><br />
+        どちらかを指定してください<br />
+        倍率指定:
+        <input type="number" id="percent-input" placeholder="100" /> %
+        <br />
+        絶対指定 幅:
+        <input type="number" id="width-input" placeholder="" /> px 高さ:
+        <input type="number" id="height-input" placeholder="" /> px
       </div>
       <br />
       <button id="resize-button" disabled>リサイズ</button>
       <button id="download-button" disabled>ダウンロード</button>
-
+      <br /><br />
+      <hr />
       <div id="canvas-container">
         <canvas id="image-canvas"></canvas>
       </div>
