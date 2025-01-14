@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <!--ページ説明系-->
+    <meta property="og:site_name" content="Musenmy" />
+    <title>限定公開や廃止済のサービス - Musenmy</title>
+    <meta property="og:title" content="限定公開や廃止済のサービス - Musenmy" />
+    <meta name="description" content="限定公開や廃止済のサービスのまとめ" />
+    <meta property="og:description" content="限定公開や廃止済のサービスのまとめ" />
+    <!--Google Web解析-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+    <h1>限定公開・廃止済のサービス</h1>
+    <p class="globalContainer">
+      パブリックではないがどこかに提供している(いた)サービス、需要を終えてサ終したサービス、開発を断念したサービスなど…</p>
+    <br />
+    <div class="doFlex">
+      <div class="flex1">
+        <h2>こしひかり<br />原神HoYoLAB部</h2>
+        <br />
+        <p>
+          レべルシステムや匿名投票、通報機能を実装したBot。Webhookを用いて取り扱っていたフォームや、別のBotが行っていた不便な作業を代替し発足しました。
+        </p>
+        <p>
+          Relicerをきっかけに入ったサーバーです。HoYoLABをはじめとするmiHoYoの作品を取り扱っています。
+        </p>
+        <br />
+        <a class="button" href="https://discord.gg/x4VFCr2HAd">このサーバーに参加する</a>
+      </div>
+      <div class="flex2">
+        <h2>Relicer Auditor<br />非公開のサーバー</h2>
+        <br />
+        <p>
+          メッセージの削除やメンバーの入退出などを記録するBot。<br />
+          同機能を持ったサービスはいくらでもありますが、スラッシュコマンドを持たない最も単純なものとして作成しました。
+        </p>
+      </div>
+    </div>
+    <div class="doFlex">
+      <div class="flex1">
+        <h2>X URL Mod<br />サービス終了</h2>
+        <br />
+        <p>
+          ポストURLを含むメッセージをVXTwitterから取得しプレビューを表示するBot。<br />
+          Xの仕様改善によるVXTwitterの需要の低下とともに廃れたのでサービス終了。
+        </p>
+      </div>
+      <div class="flex2">
+        <h2>Relicer Player<br />サービス終了</h2>
+        <br />
+        <p>
+          音楽プラットフォームからVCにストリームするBot。<br />
+          提供側のポリシー変更によりパブリックにできなくなったため公開終了し、個人利用としてクローズドなサーバーで継続されています。
+        </p>
+      </div>
+    </div>
+    <br /><br />
+
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>

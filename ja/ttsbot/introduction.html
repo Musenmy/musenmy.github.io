@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <!--ページ説明系-->
+    <meta property="og:site_name" content="Musenmy" />
+    <title>読み上げBot - Musenmy</title>
+    <meta property="og:title" content="読み上げBot - Musenmy" />
+    <meta name="description" content="新サービスの予告ページ" />
+    <meta property="og:description" content="新サービスの予告ページ" />
+    <!--Google Web解析-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+    <h1>読み上げBotリリース？</h1>
+    <p class="globalContainer">
+      今後の方針についての紹介！<br />
+      ※このページのURL「/ttsbot/introduction.html」は暫定的なものです。サービス名称の決定時に変更されると思います。
+    </p>
+    <br />
+    <div class="doFlex">
+      <div class="flex1">
+        <h2>経緯</h2>
+        <br />
+        <p>
+          読み上げBotといえば、2年半前に一度開発を断念しています。<br />
+          ですが最近ではDiscordの知名度の上昇・サーバーの大規模化によるTTSの不足・辞書を登録することの面倒さなどにより、新規参入でもある程度の需要があると感じています。<br />
+          今までの開発経験もあり能力の上達もあるなか、再始動することが現実味を帯びてきました。
+        </p>
+      </div>
+      <div class="flex2">
+        <h2>リリースに向けて</h2>
+        <br />
+        <p>
+          課題はやはりサーバーです。支援していただける一定の方々が集まったら始動しようと思っていますが、断念した頃のソースコードは荒れているためリメイクも必要です。<br />
+          2025年4月～5月にRelicerをリニューアルした後、限定公開の読み上げBotを作成し、小規模なサーバーで試運転を行う計画です
+          (単位落としそうにならなければ)。
+        </p>
+        <br />
+        <p>現在から支援者様を募集しているので、よろしければお願いします。既に応募された4人は先行公開の対象となります。</p>
+        <p>寄付は全てマシンやその周辺機器に充てられます。</p>
+        <a class="button" href="https://musenmy.fanbox.cc">Fanboxで支援する</a>
+      </div>
+    </div>
+    <br /><br />
+
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>
