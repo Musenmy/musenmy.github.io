@@ -67,18 +67,6 @@ dark mode
   font-family: "Frutiger", "Noto", sans-serif;
   line-height: 1.3em;
 }
-#message {
-  display: none;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  background-color: var(--bgColor);
-  margin: 60px 3% 0 3%;
-}
-#redirect-link {
-  color: #83aabb;
-  text-decoration: underline;
-  cursor: pointer;
-}
 body {
   margin: 0;
   position: relative;
@@ -89,6 +77,8 @@ body {
   animation-delay: 0.001s;
 }
 table {
+  margin: auto;
+  width: 94%;
   background-color: var(--pColor);
   border-collapse: collapse;
 }
@@ -103,28 +93,14 @@ th {
   background-color: #03c13d55;
   color: var(--pColor);
 }
+/*リンク disableが必要でない限りaを使用する*/
+a.button,
 input[type="button"] {
-  width: 300px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 18px;
-  transition: 0;
-  cursor: pointer;
-  border: 1px solid black;
-  background-color: #90ccf1;
-  color: #202124;
-}
-input[type="button"]:hover {
-  background-color: #0072ba;
-  color: white;
-}
-a.button {
   display: block;
   text-decoration: none;
   text-align: center;
   width: 300px;
-  height: 40px;
-  line-height: 40px;
+  padding: 0.45em;
   font-size: 18px;
   transition: 0;
   cursor: pointer;
@@ -132,30 +108,23 @@ a.button {
   color: black;
   background-color: #90ccf1;
 }
-a.button:hover {
+a.button:hover,
+input[type="button"]:hover {
   background-color: #0072ba;
   color: white;
 }
 input[type="button"]:disabled {
   cursor: not-allowed;
-  @media (prefers-color-scheme: light) {
-    /*ライトだと薄くするとおかしいから調整*/
-    border: 1px solid #202124;
-    background-color: rgba(32, 33, 36, 0.4);
-    color: rgba(32, 33, 36, 0.4);
-  }
-  @media (prefers-color-scheme: dark) {
-    border: 1px solid #202124;
-    background-color: rgba(204, 204, 204, 0.4);
-    color: rgba(32, 33, 36, 0.4);
-  }
+  border: 1px solid #202124;
+  background-color: #aaaaaa55;
+  color: #00000055;
 }
 
 footer {
   border-top: 10px solid var(--pColor);
   width: 100%;
   height: 100px;
-  margin-top: 50px;
+  margin-top: 3em;
   padding-top: 1em;
 }
 p {
@@ -172,23 +141,13 @@ li {
   margin: 1px;
   align-items: center;
 }
-header p {
-  padding: 0;
-  margin: 10px 2% 5px 3%;
-  color: black;
-  background-color: gainsboro;
-}
-table {
-  margin: auto;
-  width: 94%;
-}
 a {
   color: var(--linkColor);
 }
 h1 {
   font-size: 40px;
   text-align: center;
-  margin: 6% 0 4% 0;
+  margin: 5% 0 3% 0;
   color: var(--pColor);
 }
 h2 {
@@ -224,49 +183,4 @@ h3 {
 }
 .center {
   text-align: center;
-}
-/*collapse text box*/
-.acd-check {
-  display: none;
-}
-.acd-label {
-  border: 1px solid var(--pColor);
-  background: var(--bgColor);
-  color: var(--pColor);
-  display: block;
-  margin: 0 3%;
-  padding: 10px 3%;
-}
-.acd-content {
-  border: 1px solid var(--pColor);
-  border-top: none;
-  height: 0;
-  opacity: 0;
-  margin: 0 3%;
-  padding: 10px;
-  transition: 0.3s;
-  visibility: hidden;
-}
-.acd-check:checked + .acd-label + .acd-content {
-  height: auto;
-  opacity: 1;
-  margin: 0 3%;
-  visibility: visible;
-}
-/*terms*/
-.container {
-  padding: 10px;
-}
-
-input[type="checkbox"] {
-  margin: 15px 5px;
-}
-
-@keyframes load {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
