@@ -58,6 +58,7 @@ dark mode
 }
 
 * {
+  scroll-behavior: smooth;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -66,7 +67,6 @@ dark mode
   font-family: "Frutiger", "Noto", sans-serif;
   line-height: 1.3em;
 }
-
 #message {
   display: none;
   padding: 10px;
@@ -90,14 +90,18 @@ body {
 }
 table {
   background-color: var(--pColor);
+  border-collapse: collapse;
 }
 td {
-  text-align: center;
+  border: 2px solid var(--pColor);
+  padding: 0.3em 2em;
   color: var(--pColor);
 }
 th {
-  background-color: var(--pColor);
-  color: var(--bgColor);
+  border: 2px solid var(--pColor);
+  padding: 0.3em 2em;
+  background-color: #03c13d55;
+  color: var(--pColor);
 }
 input[type="button"] {
   width: 300px;
