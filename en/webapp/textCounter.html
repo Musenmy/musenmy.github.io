@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <!--ページ説明系-->
+    <meta property="og:site_name" content="Musenmy" />
+    <title>Text Counter - Musenmy Webtools</title>
+    <meta property="og:title" content="Text Counter - Musenmy Webtools" />
+    <meta name="description" content="Light, Fast text counter. You can use even you are having poor connection" />
+    <meta
+      property="og:description"
+      content="Light, Fast text counter. You can use even you are having poor connection"
+    />
+    <!--Google Web解析-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+    <style>
+      textarea {
+        margin-left: 3%;
+        width: 94%;
+        height: 38vh;
+      }
+      d {
+        margin-left: 3%;
+        display: table;
+      }
+      d p {
+        display: table-row;
+      }
+      d p n {
+        display: table-cell;
+        text-align: right;
+        min-width: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+    <h1>Text Counter</h1>
+    <textarea id="t" placeholder="入力"></textarea>
+    <d>
+      <p>Characters<n id="c">0</n></p>
+      <p>Characters Excl. Spaces<n id="n">0</n></p>
+      <p>Lines<n id="l">0</n></p>
+      <p>UTF-8<n id="b">0B (0.0KB)</n></p>
+    </d>
+    <script>
+      t.addEventListener("input", () => {
+        x = t.value;
+        c.innerText = x.length;
+        n.innerText = x.replace(/[\s\u00A0\u2000-\u200A\u202F\u205F\u3000]+/g, "").length;
+        l.innerText = x.split(/\r\n|\r|\n/).length;
+        y = new TextEncoder().encode(x).length;
+        b.innerText = `${y}B (${(y / 1024).toFixed(1)}KB)`;
+      });
+    </script>
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>

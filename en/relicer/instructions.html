@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   <link rel="icon" href="/favicon.ico" />
+   <link rel="stylesheet" href="/style.css" />
+   <!--ページ説明系-->
+   <meta property="og:site_name" content="Musenmy" />
+   <title>Relicer Instructions - Musenmy</title>
+   <meta property="og:title" content="Relicer Instructions - Musenmy" />
+   <meta
+     name="description"
+     content="Instructions of Relicer Discord Bot"
+   />
+   <meta
+     property="og:description"
+     content="Instructions of Relicer Discord Bot"
+   />
+   <!--Google Web解析-->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag() {
+       dataLayer.push(arguments);
+     }
+     gtag("js", new Date());
+     gtag("config", "G-3SWSM9QNQJ");
+   </script>
+ </head>
+
+<body>
+   <div id="header"></div>
+   <script>
+      $(function () {
+         $("#header").load("/header.html");
+      });
+   </script>
+   <h1>Relicer Instructions</h1>
+   <div>
+      <p class="center">This page is in progress of translation.<br>このページはRelicerのコマンドの説明です。コマンドの入力方法などが分からない方はDiscordの公式サイトなどをご覧ください。</p>
+   </div>
+   <br>
+   <div class="doFlex">
+      <div class="flex1">
+         <h2>Create Star Rail buildcard<br />/hsr-char</h2>
+         <br />
+         <p>
+            コマンド実行後に表示されるモーダルにUID、キャラ、スコアの計算基準、オプションを入力します。<br />
+            キャラは配置順の番号（下画像参照）または、キャラ名（ひらがな・英語など可。下リンク参照）で指定できます。<br>
+            省略すると0番目のキャラとおすすめ計算基準が選択されます。<br><br>
+         </p>
+         <p><b>オプションに指定できるもの</b><br></p>
+         <p>
+            のび：遺物の伸び率を詳細表示します<br>
+            けた：総合ステータス表示を小数点が揃うようにインデントします<br><br>
+         </p>
+         <p>
+            <input type="button" onclick="openUrl(`hsrScore`)" value="計算式や評価基準を見る" /><br><br>
+         </p>
+         <p class="center">Character Index</p>
+         <div class="center">
+            <img src="/imgs/hsr-charplace.png" alt="スタレのキャラ位置説明" width="60%" />
+         </div>
+         <p class="center">Sample Card (from dev team)</p>
+         <div class="center">
+            <img src="/imgs/relicer-hsr.webp" alt="Relicerが生成したスタレのビルドカードの画像" width="80%" />
+         </div>
+         </p>
+      </div>
+      <div class="flex2">
+         <h2>Create Genshin buildcard<br />/gi-char</h2>
+         <br />
+         <p>
+            コマンド実行後に表示されるモーダルにUID、キャラ、スコアの計算基準を入力します。<br />
+            キャラは配置順の番号（下画像参照）または、キャラ名（ひらがな・英語など可。下リンク参照）で指定できます。<br>
+            省略すると0番目のキャラとおすすめ計算基準が選択されます。<br>
+            ※キャラ配置画面で「キャラ詳細表示」をオンにしないとデータを取得できません！<br><br>
+         </p>
+         <p>
+            <input type="button" onclick="openUrl(`giScore`)" value="計算式や評価基準を見る" /><br><br>
+         </p>
+         <p class="center">Character Index</p>
+         <div class="center">
+            <img src="/imgs/gi-charplace.png" alt="原神のキャラ位置説明" width="60%" />
+         </div>
+         <p class="center">Sample Card (from lqqzlozz)</p>
+         <div class="center">
+            <img src="/imgs/relicer-gi-lqqz.webp" alt="Relicerが生成した原神のビルドカードの画像" width="80%" />
+         </div>
+      </div>
+   </div>
+   <div class="doFlex">
+      <div class="flex1">
+         <h2>ゼンゼロのビルドカード生成<br />/zzz-char</h2>
+         <br />
+         <p>コマンド実行後に表示されるモーダルに<strong>ジェネレーターで生成したJSONデータ (UIDではありません) </strong>を入力すると、ベータ版のビルドカードを生成できます。</p>
+         <p>UIDからデータが取得できるようになれば、更新して原神・スタレと同等の機能を持たせる予定です。</p>
+         <p>
+            <input type="button" onclick="openUrl(`zzzGen`)" value="データジェネレーター" />
+         </p>
+      </div>
+      <div class="flex2">
+         <h2>サーバー状態を確認<br />/ping</h2>
+         <br />
+         <p>
+           コマンドを実行するとBotの回線遅延および各APIの応答時間が返されます。<br />
+           APIがダウンしている場合はそのことも確認できます。他コマンドがエラーする場合にはRelicerのせいかAPIのせいかを確認してからお問い合わせください。<br />
+           pingも反応しない場合はBotが落ちています。
+         </p>
+      </div>
+   </div>
+   <div class="doFlex">
+      <div class="flex1">
+         <h2>アカウントの概要を取得<br />/hsr-detailと/gi-detail</h2>
+         <br />
+         <p>コマンド実行後に表示されるモーダルにUIDを入力すると、螺旋・庭の進捗やアチーブ数などを確認できます。</p>
+      </div>
+      <div class="flex2">
+         <h2>スタミナ計算<br />/hsr-staminaと/gi-stamina</h2>
+         <br />
+         <p>
+            コマンドの引数に現在の樹脂または開拓力を入力します。<br />
+            全回復が今日か明日か・それが何時何分で何時間後かが出力されます。
+         </p>
+      </div>
+   </div>
+   <div class="doFlex">
+      <div class="flex1">
+         <h2>遺物の経験値を計算<br />/hsr-arti-xpと/gi-arti-xp</h2>
+         <br />
+         <p>
+            コマンドの引数にレアリティとレベルを指定して、強化の必要素材を計算します。<br />
+            ☆3～☆5にのみ対応しています。
+         </p>
+      </div>
+      <div class="flex2">
+         <h2>Coming Soon...<br />/unknown</h2>
+         <br />
+         <p>
+           今後も新しいコマンドが追加されるかも？
+         </p>
+      </div>
+   </div>
+
+   <div id="footer"></div>
+   <script>
+      $(function () {
+         $("#footer").load("/footer.html");
+      });
+   </script>
+   <script>
+      function openUrl(typ) {
+         let urls = {
+            giScore: "/ja/relicer/gi-scoring.html",
+            hsrScore: "/ja/relicer/hsr-scoring.html",
+            zzzGen: "/ja/relicer/zzz-generator.html"
+         };
+         let url = urls[typ] || "#";
+         window.open(url);
+      }
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <!--ページ説明系-->
+    <meta property="og:site_name" content="Musenmy" />
+    <title>Relicer introduction - Musenmy</title>
+    <meta property="og:title" content="Relicer introduction - Musenmy" />
+    <meta
+      name="description"
+      content="Introduction of Relicer, Discord Bot for players of HoYo games"
+    />
+    <meta
+      property="og:description"
+      content="Introduction of Relicer, Discord Bot for players of HoYo games"
+    />
+    <!--Google Web解析-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+    <h1>Introduction of Relicer</h1>
+    <div class="doFlex">
+      <div class="flex1" id="about-relicer">
+        <h2>What is Relicer?</h2>
+        <br />
+        <p>
+          Relicer is utility bot for Genshin Impact / Honkai: Star Rail and Zenless Zone Zero.<br />
+          You can rate your relic from UID, check your in-game profile from discord, calculate energy recovery time, etc.<br />
+          Relic scoring is for heavy players.<br /><br />
+          ZZZ buildcard is temporate, which requires you to input all data by yourself. Fetching feature from UID will be available when API releases from provider.
+        </p>
+        <br />
+        <p>
+          <a class="button" href="/en/relicer/instructions.html">Instructions for each commands</a>
+        </p>
+      </div>
+      <div class="flex2" id="relicer-update">
+        <h2>Update etc.</h2>
+        <br />
+        <h3>Important Notification</h3>
+        <p>
+          Due to my studies, I will be online much less until next April, so I will only work on
+          game updates. <br />
+          The works may be delayed.
+        </p>
+      </div>
+    </div>
+    <div class="doFlex">
+      <div class="flex1" id="relicer-invite">
+        <h2>Install Relicer</h2>
+        <br />
+        <p>
+          You can invite Bot only if you are admin of the server.<br />
+          Have no available servers? Create your own in your Discord app!
+        </p>
+        <div class="agreeTerms">
+          <form>
+            <p>
+              <input type="checkbox" id="consent-chk" name="consent-chk" style="margin: 1em" />
+              <label for="consent-chk"
+                >Agree to <a href="/en/terms.html">Relicer terms of service</a></label
+              >
+            </p>
+            <p>
+              <input
+                type="button"
+                id="invite-bot"
+                onclick="openUrlNewTab(`bot`)"
+                value="Invite Bot to server"
+                disabled
+              />
+            </p>
+          </form>
+        </div>
+      </div>
+      <div class="flex2" id="discord-invite">
+        <h2>Relicer Official Discord</h2>
+        <br />
+        <p>Relicer Community: both for bot support & community for HoYo games</p>
+        <p>This server is mainly based on Japanese, but you can recieve dev support in English via inquiry thread.</p>
+        <br />
+        <p>
+          <input type="button" onclick="openUrlNewTab(`com`)" value="Join our server" />
+        </p>
+      </div>
+    </div>
+
+    <br /><br />
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+    <script>
+      function openUrlNewTab(typ) {
+        let urls = {
+          bot: "https://discord.com/api/oauth2/authorize?client_id=1073165731182673990&permissions=414464731200&scope=guilds.join%20bot%20applications.commands&response_type=code",
+          com: "https://discord.com/invite/juJAFbvnta",
+        };
+        let url = urls[typ] || "#";
+        window.open(url, "_blank");
+      }
+      function openUrl(typ) {
+        let urls = {
+          use: "/ja/relicer/instructions.html",
+        };
+        let url = urls[typ] || "#";
+        window.open(url);
+      }
+
+      const consent_chk = document.querySelector(`#consent-chk`);
+      const submit_btn = document.querySelector(`#invite-bot`);
+
+      consent_chk.addEventListener("change", () => {
+        submit_btn.disabled = !consent_chk.checked;
+      });
+      window.addEventListener("pageshow", function (event) {
+        if (event.persisted) {
+          consent_chk.checked = false;
+          submit_btn.disabled = true;
+        }
+      });
+    </script>
+  </body>
+</html>
