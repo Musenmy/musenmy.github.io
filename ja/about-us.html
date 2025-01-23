@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <!--ページ説明系-->
+    <meta property="og:site_name" content="Musenmy" />
+    <title>About Us - Musenmy</title>
+    <meta property="og:title" content="About Us - Musenmy" />
+    <meta name="description" content="Musenmyプロジェクトチームの紹介" />
+    <meta property="og:description" content="Musenmyプロジェクトチームの紹介" />
+    <!--Google Web解析-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+    <h1>About Us</h1>
+    <div class="doFlex">
+      <div class="flex1">
+        <h2>Musenmy</h2>
+        <br />
+        <p>2021年末にこの集いを立ち上げた中部の人。</p>
+        <p>日常的にはNodeJSとPythonを使用。C#とKotlin勉強中。</p>
+        <p>プロジェクトのほとんどのコードは自分で書いている。Web以外のプラットフォームでもアプリを作りたいがC系言語に慣れなさすぎてUnityが難しい。</p>
+        <p>名前の由来は無洗米であるが、なぜこの名前にしたのか覚えていない。</p>
+      </div>
+      <div class="flex2">
+        <h2>Quaver</h2>
+        <br />
+        <p>Xで知り合った関東の人。他のメンバーと会ったことはない。</p>
+        <p>NodeJSからプログラムに入って個人で小規模なBotを運営している。チームとしてはJSONなどデータ関連で携わっている。</p>
+        <p>名前の由来は8分音符 (サブ垢は16分音符) のイギリス英語である。</p>
+      </div>
+    </div>
+    <div class="doFlex">
+      <div class="flex1">
+        <h2>Aikan</h2>
+        <br />
+        <p>一時期チームメンバーとして認証を手伝ってくれたりした中部の人。</p>
+        <p>本人いわくエンジニアではないらしい。</p>
+        <p>名前の由来は不明だが、愛知環状鉄道の関係者ではない。Musenmyと鉄道旅に出ることもたまにある。</p>
+      </div>
+      <div class="flex2">
+        <h2>Coming Soon?</h2>
+        <br />
+        <p>チームがもっと規模拡大すれば新メンバーが加わるかもしれません。興味があればDiscordへ！</p>
+      </div>
+    </div>
+    <br /><br />
+
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>
