@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <!--ページ説明系-->
+    <meta property="og:site_name" content="Musenmy" />
+    <title>ほよタイマー - Musenmy</title>
+    <meta property="og:title" content="ほよタイマー - Musenmy" />
+    <meta
+      name="description"
+      content="原神・崩壊:スターレイル・ゼンレスゾーンゼロのスタミナ管理が楽になる。Musenmy初のWindowsアプリ"
+    />
+    <meta
+      property="og:description"
+      content="原神・崩壊:スターレイル・ゼンレスゾーンゼロのスタミナ管理が楽になる。Musenmy初のWindowsアプリ"
+    />
+    <!--Google Web解析-->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3SWSM9QNQJ");
+    </script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+
+    <h1>ほよタイマー</h1>
+    <p class="globalContainer">
+      ほよゲーマー向けに作られたMusenmy初のWindowsアプリ
+    </p>
+    <br />
+    <div class="doFlex">
+      <div class="flex1">
+        <h2>アプリの紹介</h2>
+        <br />
+        <ul style="padding-left: 2%">
+          <li>
+            スタミナ管理が楽になるアプリ<br />
+            原神・崩壊:スターレイル・ゼンレスゾーンゼロのスタミナを独立でカウントし、回復を通知します。<br />
+            スタミナを消費するたびに対応するボタン ( -60 / -40 / -30 / -10 )
+            をクリックして使います。 実際の値とずれた場合でも -1 / +1
+            ボタンで調整できます。 回復アイテムを使ったとき用の +60
+            ボタンもあります。
+          </li>
+          <li>
+            全画面モードと小窓モード<br />
+            デフォルトで2つのウィンドウサイズが用意されています。
+            極端に小さくするとレイアウトが崩れる可能性がありますが、手動設定もできます。
+          </li>
+          <li>
+            バックグラウンドに常駐<br />
+            ウィンドウを閉じてもタスクトレーで生きており、クリックで開けます。<br />
+            環境によってはシャットダウンを妨げる
+            (実行前にアプリを終了するか聞かれる)
+            ため、うっかり時間カウントが消えることもありません。
+          </li>
+          <li>
+            通知タイミングを指定できる<br />
+            [XXまで回復したら通知]
+            という設定があります。全回復ではなく、任意のタイミングで知ることができます。
+          </li>
+        </ul>
+        <br /><br />
+        <div class="center">
+          <p>全画面モードの例</p>
+          <img
+            src="/imgs/hoyotimer-L.png"
+            alt="ほよタイマーの全画面モード"
+            width="80%"
+          />
+        </div>
+        <div class="center">
+          <p>小窓モードの例</p>
+          <img
+            src="/imgs/hoyotimer-S.png"
+            alt="ほよタイマーの小窓モード"
+            width="80%"
+          />
+        </div>
+      </div>
+      <div class="flex2">
+        <h2>アプリをダウンロード</h2>
+        <br />
+        <p>ボタンをクリックするとダウンロードが始まります。</p>
+        <p>
+          zipファイルを展開し、中にある<b>ほよタイマー.exe</b>を実行することで起動できます。
+          前述したとおりウィンドウを閉じても終了しないため、
+          終了させるときはタスクトレーのアイコンを右クリックして、[アプリを終了]
+          をクリックしてください。
+        </p>
+        <br />
+        <p>
+          自分としてはネイティブアプリは初めての試みなのでバグがあるような気がします。GitHubにIssueを投げるかDiscordで教えてもらえれば時間のある時に対応します。
+        </p>
+        <br />
+        <a
+          class="button"
+          href="https://github.com/Musenmy/HoYoTimer/releases/download/HoYoTimer/HoYoTimer1.0.0_win_x64.zip"
+          >Ver 1.0をダウンロード</a
+        >
+        <br />
+        <a class="button" href="https://github.com/Musenmy/HoYoTimer"
+          >GitHubのリポジトリを見る</a
+        >
+      </div>
+    </div>
+
+    <div id="footer"></div>
+    <script>
+      $(function () {
+        $("#footer").load("/footer.html");
+      });
+    </script>
+  </body>
+</html>
