@@ -2,7 +2,10 @@
 <html lang="ja">
   <head>
     <!-- GoogleTag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -19,7 +22,10 @@
     <link rel="stylesheet" href="/style.css" />
 
     <title>ゼンゼロ評価基準 - Relicer</title>
-    <meta name="description" content="Relicerでのゼンゼロの評価基準および計算式を記載しています" />
+    <meta
+      name="description"
+      content="Relicerでのゼンゼロの評価基準および計算式を記載しています"
+    />
   </head>
 
   <body>
@@ -32,12 +38,16 @@
 
     <!-- ここより下に書いてください -->
     <h1>ゼンゼロ評価基準</h1>
-    <p class="center">Relicerでのゼンゼロのスコアリングについて解説しています</p>
+    <p class="center">
+      Relicerでのゼンゼロのスコアリングについて解説しています
+    </p>
     <br /><br />
 
     <div class="center" id="evals">
       <h2>スコア評価基準</h2>
-      <p>原神・スタレと異なりメインステ補正はかかっていません。後日改善します</p>	
+      <p>
+        原神・スタレと異なりメインステ補正はかかっていません。後日改善します
+      </p>
       <br /><br />
       <table border="1" align="center" cellpadding="30">
         <tr>
@@ -47,48 +57,48 @@
         </tr>
         <tr>
           <td>D</td>
-          <td>14.4 未満</td>
-          <td>86.4 未満</td>
+          <td>14.0 未満</td>
+          <td>84.0 未満</td>
         </tr>
         <tr>
           <td>C</td>
-          <td>14.4 ～ 24.0</td>
-          <td>86.4 ～ 144.0</td>
+          <td>14.0 ～ 22.5</td>
+          <td>84.0 ～ 135.0</td>
         </tr>
         <tr>
           <td>B</td>
-          <td>24.0 ～ 28.8</td> 
-          <td>144.0 ～ 172.8</td>
+          <td>22.5 ～ 28.5</td>
+          <td>135.0 ～ 171.0</td>
         </tr>
         <tr>
           <td>A</td>
-          <td>28.8 ～ 31.8</td>
-          <td>172.8 ～ 190.8</td>
+          <td>28.5 ～ 31.0</td>
+          <td>171.0 ～ 186.0</td>
         </tr>
         <tr>
           <td>S</td>
-          <td>31.8 ～ 32.3</td>
-          <td>190.8 ～ 193.8</td>
+          <td>31.0 ～ 34.1</td>
+          <td>186.0 ～ 204.6</td>
         </tr>
         <tr>
           <td>S+</td>
-          <td>32.3 ～ 33.6</td>
-          <td>193.8 ～ 201.6</td>
+          <td>34.1 ～ 35.3</td>
+          <td>204.6 ～ 211.8</td>
         </tr>
         <tr>
           <td>SS</td>
-          <td>33.6 ～ 35.3</td>
-          <td>201.6 ～ 211.8</td>
+          <td>35.3 ～ 35.9</td>
+          <td>211.8 ～ 215.4</td>
         </tr>
         <tr>
           <td>SS+</td>
-          <td>35.3 ～ 36.6</td>
-          <td>211.8 ～ 219.6</td>
+          <td>35.9 ～ 36.5</td>
+          <td>215.4 ～ 219.0</td>
         </tr>
         <tr>
           <td>SSS</td>
-          <td>36.6 ～ 37.8</td>
-          <td>219.6 ～ 226.8</td>
+          <td>36.5 ～ 37.8</td>
+          <td>219.0 ～ 226.8</td>
         </tr>
         <tr>
           <td>SSS+</td>
@@ -107,12 +117,20 @@
           <th>式</th>
         </tr>
         <tr>
-          <td>攻撃</td>
-          <td>ATK% + ATK/9 + CR×2 + CD</td>
+          <td>攻撃<br />多くのキャラのデフォルト</td>
+          <td>ATK% + ATK/15 + CR×2 + CD + PEN/17</td>
         </tr>
         <tr>
-          <td>その他</td>
-          <td>実装をお待ちください</td>
+          <td>攻撃のみ<br />蒼角のデフォルト</td>
+          <td>ATK%×1.964 + ATK/7.6</td>
+        </tr>
+        <tr>
+          <td>防御のみ<br />ベンのデフォルト</td>
+          <td>DEF%×1.226 + DEF/5.9</td>
+        </tr>
+        <tr>
+          <td>異常<br />ほとんどの異常キャラのデフォルト</td>
+          <td>AP×1.553 + ATK%×1.553 + ATK/23.3 + PEN/26.4</td>
         </tr>
       </table>
     </div>
