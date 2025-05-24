@@ -45,8 +45,8 @@ dark mode
   margin: 0 3%;
 }
 @font-face {
-  font-family: "Frutiger";
-  src: url("/fonts/Frutiger.ttf");
+  font-family: "Myriad";
+  src: url("/fonts/Myriad.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -64,7 +64,7 @@ dark mode
   margin: 0;
   transition: 0.75s;
   background-color: var(--bgColor);
-  font-family: "Frutiger", "Noto", sans-serif;
+  font-family: "Myriad", "Noto", sans-serif;
   line-height: 1.3em;
 }
 body {
