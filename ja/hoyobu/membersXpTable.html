@@ -106,7 +106,7 @@
       ctx.fillStyle = "black";
       ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.font = "30pt Frutiger";
+      ctx.font = "30pt Myriad";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText("HoYobu Level Chart", 1000, 50);
@@ -114,7 +114,7 @@
       ctx.lineTo(100, 740);
       ctx.lineTo(1950, 740);
       ctx.stroke();
-      ctx.font = "25px Frutiger";
+      ctx.font = "25px Myriad";
       ctx.textAlign = "right";
       for (let y = 100; y <= 740; y += 80) {
         ctx.moveTo(100, y);
@@ -125,7 +125,7 @@
       ctx.textAlign = "left";
       ctx.translate(0, 0);
       ctx.rotate((90 * Math.PI) / 180); // x,y > y,-x
-      ctx.font = "20px Frutiger";
+      ctx.font = "20px Myriad";
 
       //GTX XP
       gtx.fillStyle = "white";
@@ -133,7 +133,7 @@
       gtx.fillStyle = "black";
       gtx.lineWidth = 2;
       gtx.beginPath();
-      gtx.font = "30pt Frutiger";
+      gtx.font = "30pt Myriad";
       gtx.textAlign = "center";
       gtx.textBaseline = "middle";
       gtx.fillText("HoYobu XP Chart", 1000, 50);
@@ -141,7 +141,7 @@
       gtx.lineTo(100, 740);
       gtx.lineTo(1950, 740);
       gtx.stroke();
-      gtx.font = "25px Frutiger";
+      gtx.font = "25px Myriad";
       gtx.textAlign = "right";
       for (let y = 100; y <= 740; y += 80) {
         gtx.moveTo(100, y);
@@ -152,7 +152,7 @@
       gtx.textAlign = "left";
       gtx.translate(0, 0);
       gtx.rotate((90 * Math.PI) / 180); // x,y > y,-x
-      gtx.font = "20px Frutiger";
+      gtx.font = "20px Myriad";
 
       fetch("https://koshihikari.glitch.me/getxp")
         .then((res) => res.json())
