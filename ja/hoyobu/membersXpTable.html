@@ -12,15 +12,9 @@
     <title>ほよ部XPテーブル - Musenmy</title>
     <meta property="og:title" content="ほよ部XPテーブル - Musenmy" />
     <meta name="description" content="原神HoYoLAB部のメッセージレべル一覧" />
-    <meta
-      property="og:description"
-      content="原神HoYoLAB部のメッセージレべル一覧"
-    />
+    <meta property="og:description" content="原神HoYoLAB部のメッセージレべル一覧" />
     <!--Google Web解析-->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -85,100 +79,97 @@
     </table>
     <script>
       const xpTable = [
-        3, 5, 7, 10, 13, 16, 20, 24, 28, 33, 38, 43, 48, 54, 60, 66, 73, 80, 87,
-        95, 103, 111, 119, 128, 137, 146, 156, 166, 176, 187, 198, 209, 220,
-        232, 244, 256, 269, 282, 295, 309, 323, 337, 351, 366, 381, 396, 412,
-        428, 444, 461, 478, 495, 512, 530, 548, 566, 585, 604, 623, 643, 663,
-        683, 703, 724, 745, 766, 788, 810, 832, 855, 878, 901, 924, 948, 972,
-        996, 1021, 1046, 1071, 1097, 1123, 1149, 1175, 1202, 1229, 1256, 1284,
-        1312, 1340, 1369, 1398, 1427, 1456, 1486, 1516, 1546, 1577, 1608, 1639,
-        1671,
+        3, 5, 7, 10, 13, 16, 20, 24, 28, 33, 38, 43, 48, 54, 60, 66, 73, 80, 87, 95, 103, 111, 119, 128, 137, 146, 156,
+        166, 176, 187, 198, 209, 220, 232, 244, 256, 269, 282, 295, 309, 323, 337, 351, 366, 381, 396, 412, 428, 444,
+        461, 478, 495, 512, 530, 548, 566, 585, 604, 623, 643, 663, 683, 703, 724, 745, 766, 788, 810, 832, 855, 878,
+        901, 924, 948, 972, 996, 1021, 1046, 1071, 1097, 1123, 1149, 1175, 1202, 1229, 1256, 1284, 1312, 1340, 1369,
+        1398, 1427, 1456, 1486, 1516, 1546, 1577, 1608, 1639, 1671,
       ];
 
-      const levelChart = document.getElementById("levelChart");
-      const xpChart = document.getElementById("xpChart");
-      const ctx = levelChart.getContext("2d");
-      const gtx = xpChart.getContext("2d");
+      window.onload = () => {
+        const levelChart = document.getElementById("levelChart");
+        const xpChart = document.getElementById("xpChart");
+        const ctx = levelChart.getContext("2d");
+        const gtx = xpChart.getContext("2d");
 
-      //CTX LEVEL
-      ctx.fillStyle = "white";
-      ctx.fillRect(0, 0, 2000, 1000);
-      ctx.fillStyle = "black";
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.font = "30pt Myriad";
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText("HoYobu Level Chart", 1000, 50);
-      ctx.moveTo(100, 100);
-      ctx.lineTo(100, 740);
-      ctx.lineTo(1950, 740);
-      ctx.stroke();
-      ctx.font = "25px Myriad";
-      ctx.textAlign = "right";
-      for (let y = 100; y <= 740; y += 80) {
-        ctx.moveTo(100, y);
-        ctx.lineTo(110, y);
+        //CTX LEVEL
+        ctx.fillStyle = "white";
+        ctx.fillRect(0, 0, 2000, 1000);
+        ctx.fillStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.font = "30pt Myriad";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("HoYobu Level Chart", 1000, 50);
+        ctx.moveTo(100, 100);
+        ctx.lineTo(100, 740);
+        ctx.lineTo(1950, 740);
         ctx.stroke();
-        ctx.fillText(`${80 - (y - 100) / 8}`, 95, y);
-      }
-      ctx.textAlign = "left";
-      ctx.translate(0, 0);
-      ctx.rotate((90 * Math.PI) / 180); // x,y > y,-x
-      ctx.font = "20px Myriad";
+        ctx.font = "25px Myriad";
+        ctx.textAlign = "right";
+        for (let y = 100; y <= 740; y += 80) {
+          ctx.moveTo(100, y);
+          ctx.lineTo(110, y);
+          ctx.stroke();
+          ctx.fillText(`${80 - (y - 100) / 8}`, 95, y);
+        }
+        ctx.textAlign = "left";
+        ctx.translate(0, 0);
+        ctx.rotate((90 * Math.PI) / 180); // x,y > y,-x
+        ctx.font = "20px Myriad";
 
-      //GTX XP
-      gtx.fillStyle = "white";
-      gtx.fillRect(0, 0, 2000, 1000);
-      gtx.fillStyle = "black";
-      gtx.lineWidth = 2;
-      gtx.beginPath();
-      gtx.font = "30pt Myriad";
-      gtx.textAlign = "center";
-      gtx.textBaseline = "middle";
-      gtx.fillText("HoYobu XP Chart", 1000, 50);
-      gtx.moveTo(100, 100);
-      gtx.lineTo(100, 740);
-      gtx.lineTo(1950, 740);
-      gtx.stroke();
-      gtx.font = "25px Myriad";
-      gtx.textAlign = "right";
-      for (let y = 100; y <= 740; y += 80) {
-        gtx.moveTo(100, y);
-        gtx.lineTo(110, y);
+        //GTX XP
+        gtx.fillStyle = "white";
+        gtx.fillRect(0, 0, 2000, 1000);
+        gtx.fillStyle = "black";
+        gtx.lineWidth = 2;
+        gtx.beginPath();
+        gtx.font = "30pt Myriad";
+        gtx.textAlign = "center";
+        gtx.textBaseline = "middle";
+        gtx.fillText("HoYobu XP Chart", 1000, 50);
+        gtx.moveTo(100, 100);
+        gtx.lineTo(100, 740);
+        gtx.lineTo(1950, 740);
         gtx.stroke();
-        gtx.fillText(`${12800 - (y - 100) * 20}`, 95, y);
-      }
-      gtx.textAlign = "left";
-      gtx.translate(0, 0);
-      gtx.rotate((90 * Math.PI) / 180); // x,y > y,-x
-      gtx.font = "20px Myriad";
+        gtx.font = "25px Myriad";
+        gtx.textAlign = "right";
+        for (let y = 100; y <= 740; y += 80) {
+          gtx.moveTo(100, y);
+          gtx.lineTo(110, y);
+          gtx.stroke();
+          gtx.fillText(`${16000 - (y - 100) * 25}`, 95, y);
+        }
+        gtx.textAlign = "left";
+        gtx.translate(0, 0);
+        gtx.rotate((90 * Math.PI) / 180); // x,y > y,-x
+        gtx.font = "20px Myriad";
 
-      fetch("https://koshihikari.glitch.me/getxp")
-        .then((res) => res.json())
-        .then((data) => {
-          const users = Object.values(data);
-          users.sort((a, b) => b.level - a.level || b.xp - a.xp);
-          for (let i = 0; i <= 90; i++) {
-            const { userName, xp, level } = users[i];
-            const totalXp =
-              xpTable.slice(0, level).reduce((a, b) => a + b, 0) + xp;
-            ctx.fillText(userName, 760, -(120 + i * 20), 220);
-            ctx.fillRect(740, -(120 + i * 20) - 12, -level * 8, 12);
-            gtx.fillText(userName, 760, -(120 + i * 20), 220);
-            gtx.fillRect(740, -(120 + i * 20) - 12, -totalXp / 20, 12);
-          }
-          let tableRows = users
-            .map(
-              (user, i) =>
-                `<tr><td>${i + 1}</td><td>${user.userName}</td><td>${
-                  user.level
-                } (${padXp(user.xp)}/${padXp(xpTable[user.level])})</td></tr>`
-            )
-            .join("");
-          document.getElementById("tableRows").innerHTML = tableRows;
-        });
-
+        fetch("https://koshihikari.glitch.me/getxp")
+          .then((res) => res.json())
+          .then((data) => {
+            const users = Object.values(data);
+            users.sort((a, b) => b.level - a.level || b.xp - a.xp);
+            for (let i = 0; i <= 90; i++) {
+              const { userName, xp, level } = users[i];
+              const totalXp = xpTable.slice(0, level).reduce((a, b) => a + b, 0) + xp;
+              ctx.fillText(userName, 760, -(120 + i * 20), 220);
+              ctx.fillRect(740, -(120 + i * 20) - 12, -level * 8, 12);
+              gtx.fillText(userName, 760, -(120 + i * 20), 220);
+              gtx.fillRect(740, -(120 + i * 20) - 12, -totalXp / 25, 12);
+            }
+            let tableRows = users
+              .map(
+                (user, i) =>
+                  `<tr><td>${i + 1}</td><td>${user.userName}</td><td>${user.level} (${padXp(user.xp)}/${padXp(
+                    xpTable[user.level]
+                  )})</td></tr>`
+              )
+              .join("");
+            document.getElementById("tableRows").innerHTML = tableRows;
+          });
+      };
       function padXp(value) {
         let strValue = String(value);
         return "&ensp;".repeat(4 - strValue.length) + strValue;
