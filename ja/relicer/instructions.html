@@ -44,7 +44,7 @@
          <br />
          <p>
             コマンド実行後に表示されるモーダルにUID、キャラ、スコアの計算基準、オプションを入力します。<br />
-            キャラは配置順の番号（下画像参照）または、キャラ名（ひらがな・英語など可。下リンク参照）で指定できます。<br>
+            キャラは配置順の番号（下画像参照）または、キャラ名（ひらがな・英語など可）で指定できます。<br>
             省略すると0番目のキャラとおすすめ計算基準が選択されます。<br><br>
          </p>
          <p><b>オプションに指定できるもの</b><br></p>
@@ -70,7 +70,7 @@
          <br />
          <p>
             コマンド実行後に表示されるモーダルにUID、キャラ、スコアの計算基準を入力します。<br />
-            キャラは配置順の番号（下画像参照）または、キャラ名（ひらがな・英語など可。下リンク参照）で指定できます。<br>
+            キャラは配置順の番号（下画像参照）または、キャラ名（ひらがな・英語など可）で指定できます。<br>
             省略すると0番目のキャラとおすすめ計算基準が選択されます。<br>
             ※キャラ配置画面で「キャラ詳細表示」をオンにしないとデータを取得できません！<br><br>
          </p>
@@ -91,10 +91,18 @@
       <div class="flex1">
          <h2>ゼンゼロのビルドカード生成<br />/zzz-char</h2>
          <br />
-         <p>コマンド実行後に表示されるモーダルに<strong>ジェネレーターで生成したJSONデータ (UIDではありません) </strong>を入力すると、ベータ版のビルドカードを生成できます。</p>
-         <p>UIDからデータが取得できるようになれば、更新して原神・スタレと同等の機能を持たせる予定です。</p>
          <p>
-            <input type="button" onclick="openUrl(`zzzGen`)" value="データジェネレーター" />
+            コマンド実行後に表示されるモーダルにUID、キャラ、スコアの計算基準、オプションを入力します。<br />
+            キャラは配置順の番号（左から0, 1, ... 5）または、キャラ名（ひらがな・英語など可）で指定できます。<br>
+            省略すると0番目のキャラとおすすめ計算基準が選択されます。<br><br>
+         </p>
+         <p>
+            <input type="button" onclick="openUrl(`zzzScore`)" value="計算式や評価基準を見る" /><br><br>
+         </p>
+         <p class="center">画像サンプル（開発チーム）</p>
+         <div class="center">
+            <img src="/imgs/relicer-zzz.webp" alt="Relicerが生成したゼンゼロのビルドカードの画像" width="80%" />
+         </div>
          </p>
       </div>
       <div class="flex2">
@@ -114,7 +122,7 @@
          <p>コマンド実行後に表示されるモーダルにUIDを入力すると、螺旋・庭の進捗やアチーブ数などを確認できます。</p>
       </div>
       <div class="flex2">
-         <h2>スタミナ計算<br />/hsr-staminaと/gi-stamina</h2>
+         <h2>スタミナ計算<br />/zzz-staminaと/hsr-staminaと/gi-stamina</h2>
          <br />
          <p>
             コマンドの引数に現在の樹脂または開拓力を入力します。<br />
@@ -151,7 +159,7 @@
          let urls = {
             giScore: "/ja/relicer/gi-scoring.html",
             hsrScore: "/ja/relicer/hsr-scoring.html",
-            zzzGen: "/ja/relicer/zzz-generator.html"
+            zzzScore: "/ja/relicer/zzz-scoring.html"
          };
          let url = urls[typ] || "#";
          window.open(url);

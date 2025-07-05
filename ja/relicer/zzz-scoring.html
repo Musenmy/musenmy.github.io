@@ -2,10 +2,7 @@
 <html lang="ja">
   <head>
     <!-- GoogleTag -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SWSM9QNQJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -22,10 +19,7 @@
     <link rel="stylesheet" href="/style.css" />
 
     <title>ゼンゼロ評価基準 - Relicer</title>
-    <meta
-      name="description"
-      content="Relicerでのゼンゼロの評価基準および計算式を記載しています"
-    />
+    <meta name="description" content="Relicerでのゼンゼロの評価基準および計算式を記載しています" />
   </head>
 
   <body>
@@ -38,13 +32,12 @@
 
     <!-- ここより下に書いてください -->
     <h1>ゼンゼロ評価基準</h1>
-    <p class="center">
-      Relicerでのゼンゼロのスコアリングについて解説しています
-    </p>
+    <p class="center">Relicerでのゼンゼロのスコアリングについて解説しています</p>
     <br /><br />
 
     <div class="center" id="evals">
       <h2>スコア評価基準</h2>
+      <p>メインステ補正を含んだ値を評価しています。厳選易化に伴いスタレよりもっと厳しくなりました。</p>
       <br /><br />
       <table border="1" align="center" cellpadding="30">
         <tr>
@@ -116,6 +109,10 @@
         <tr>
           <td>攻撃<br />多くのキャラのデフォルト</td>
           <td>ATK% + ATK/15 + CR×2 + CD + PEN/17</td>
+        </tr>
+        <tr>
+          <td>HP<br />儀玄のデフォルト</td>
+          <td>HP% + HP/89 + CR×2 + CD + PEN/17</td>
         </tr>
         <tr>
           <td>攻撃のみ<br />蒼角のデフォルト</td>
